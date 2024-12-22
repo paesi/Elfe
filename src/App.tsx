@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
-import Contact from './components/Contact';
+import Form from './components/Form';
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Hero />
         <ServicesSection />
         <WhyChooseUs />
-        <Contact />
+        <Form />
       </main>
 
       <Footer />
