@@ -15,6 +15,7 @@ export default function App() {
         <Hero />
         <ServicesSection />
         <WhyChooseUs />
+        <Contact />
       </main>
 
       <Footer />
