@@ -19,7 +19,7 @@ export default function Hero() {
           Professionelle Immobilienpflege in Bern
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-          Ihr zuverlässiger Partner für Reinigung, Wartung, Reparatur und Verwaltung von Immobilien.
+          Ihr zuverlässiger Partner für Verwaltung, Reinigung, Wartung und Reparatur von Immobilien.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <button 
