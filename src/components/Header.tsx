@@ -41,7 +41,6 @@ export default function Header() {
             <NavButton onClick={() => scrollToSection('hero')}>Home</NavButton>
             <NavButton onClick={() => scrollToSection('services')}>Dienstleistungen</NavButton>
             <NavButton onClick={() => scrollToSection('why-choose-us')}>Über uns</NavButton>
-            <NavButton onClick={() => scrollToSection('references')}>Referenzen</NavButton>
             <NavButton onClick={() => scrollToSection('contact')}>Kontakt</NavButton>
           </div>
 
@@ -58,7 +57,6 @@ export default function Header() {
             <MobileNavButton onClick={() => scrollToSection('hero')}>Home</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('services')}>Dienstleistungen</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('why-choose-us')}>Über uns</MobileNavButton>
-            <MobileNavButton onClick={() => scrollToSection('references')}>Referenzen</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('contact')}>Kontakt</MobileNavButton>
           </div>
         )}
