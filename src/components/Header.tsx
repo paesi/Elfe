@@ -18,13 +18,13 @@ export default function Header() {
     <header className="bg-white shadow-md fixed w-full z-50">
       <div className="bg-blue-900 text-white py-2">
         <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
-          <a href="tel:+41XXXXXXXXX" className="flex items-center space-x-2 hover:text-blue-200">
+          <a href="tel:+41797356059" className="flex items-center space-x-2 hover:text-blue-200">
             <Phone size={16} />
-            <span>+41 XX XXX XX XX</span>
+            <span>+41 79 735 60 59</span>
           </a>
-          <a href="mailto:info@hofmann-immo-service.ch" className="flex items-center space-x-2 hover:text-blue-200">
+          <a href="mailto:info@h-i-s.ch" className="flex items-center space-x-2 hover:text-blue-200">
             <Mail size={16} />
-            <span>info@hofmann-immo-service.ch</span>
+            <span>info@h-i-s.ch</span>
           </a>
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function Header() {
             onClick={() => scrollToSection('hero')} 
             className="text-2xl font-bold text-blue-900"
           >
-            Hofmann Immo-Service
+            Hofmann-Immo-Service
           </button>
           
           <div className="hidden md:flex space-x-6">
