@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
-import Form from './components/Form';
+import Contact from './components/contact';
 
 export default function App() {
   return (
