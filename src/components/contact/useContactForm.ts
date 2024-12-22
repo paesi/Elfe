@@ -47,7 +47,7 @@ export function useContactForm() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // You would need to replace this
+          access_key: process.env.REACT_APP_WEB3FORMS_KEY, // You would need to replace this
           subject: `Neue Kontaktanfrage: ${formData.subject}`,
           from_name: `${formData.firstName} ${formData.lastName}`,
           to_email: 'info@h-i-s.ch',
