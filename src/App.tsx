@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
-import References from './components/References';
 
 export default function App() {
   return (
@@ -15,7 +14,6 @@ export default function App() {
         <Hero />
         <ServicesSection />
         <WhyChooseUs />
-        <References />
       </main>
 
       <Footer />
