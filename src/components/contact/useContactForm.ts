@@ -51,6 +51,7 @@ export function useContactForm() {
           subject: `Neue Kontaktanfrage: ${formData.subject}`,
           from_name: `${formData.firstName} ${formData.lastName}`,
           to_email: 'info@h-i-s.ch',
+          reply_to: formData.email,
           message: `
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
