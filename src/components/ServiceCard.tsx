@@ -19,7 +19,7 @@ export default function ServiceCard({ title, description, icon: Icon }: ServiceC
         href={`/services#${title.toLowerCase().replace(/\s+/g, '-')}`}
         className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium"
       >
-        Mehr erfahren →
+        
       </a>
     </div>
   );
