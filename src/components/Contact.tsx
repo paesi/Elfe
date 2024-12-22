@@ -28,7 +28,7 @@ export default function Contact() {
                 <MapPin className="text-blue-600 mt-1" />
                 <div>
                   <p className="font-medium">Adresse</p>
-                  <p className="text-gray-600">Musterstrasse 123<br />3000 Bern</p>
+                  <p className="text-gray-600">Vorderdorfstrasse 1b<br />3114 Wichtrach</p>
                 </div>
               </div>
 
@@ -36,8 +36,8 @@ export default function Contact() {
                 <Phone className="text-blue-600 mt-1" />
                 <div>
                   <p className="font-medium">Telefon</p>
-                  <a href="tel:+41XXXXXXXXX" className="text-gray-600 hover:text-blue-600">
-                    +41 XX XXX XX XX
+                  <a href="tel:+41797356059" className="text-gray-600 hover:text-blue-600">
+                    +41 79 735 60 59
                   </a>
                 </div>
               </div>
