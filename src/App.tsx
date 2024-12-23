@@ -11,6 +11,7 @@ import Imprint from './pages/Imprint';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import { SEO } from './components/SEO';
+import { GoogleAnalytics } from './components/analytics/GoogleAnalytics';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Router>
         <div className="min-h-screen flex flex-col">
           <SEO />
+          <GoogleAnalytics />
           <Header />
           
           <Routes>
