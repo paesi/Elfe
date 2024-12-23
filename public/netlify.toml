@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_ENV = "production"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build]
+  node_version = "16"
