@@ -1,86 +1,42 @@
-import { useState, useCallback } from 'react';
-import { ConfiguratorState } from './types';
-import { services, frequencyFactors } from './data';
+import React from 'react';
+import { ServiceOption } from './types';
 
-const initialState: ConfiguratorState = {
-  selectedServices: {},
-  propertySize: 100,
-  frequency: 'monthly',
-  serviceType: 'cleaning' // New state field for service type
-};
-
-export function useConfigurator() {
-  const [state, setState] = useState<ConfiguratorState>(initialState);
-
-  const updateService = useCallback((serviceId: string, quantity: number) => {
-    setState(prev => ({
-      ...prev,
-      selectedServices: {
-        ...prev.selectedServices,
-        [serviceId]: quantity
-      }
-    }));
-  }, []);
-
-  const updatePropertySize = useCallback((size: number) => {
-    setState(prev => ({
-      ...prev,
-      propertySize: size
-    }));
-  }, []);
-
-  const updateFrequency = useCallback((frequency: ConfiguratorState['frequency']) => {
-    setState(prev => ({
-      ...prev,
-      frequency
-    }));
-  }, []);
-
-  const updateServiceType = useCallback((serviceType: 'cleaning' | 'management') => {
-    setState(prev => ({
-      ...prev,
-      serviceType,
-      selectedServices: {} // Reset selected services when changing type
-    }));
-  }, []);
-
-  const calculateTotal = useCallback(() => {
-    let total = 0;
-
-    // Calculate base price for each selected service
-    Object.entries(state.selectedServices).forEach(([serviceId, quantity]) => {
-      const service = services.find(s => s.id === serviceId);
-      if (service) {
-        if (service.id === 'basic-cleaning') {
-          // Grundreinigung: Objektgröße * Anzahl
-          total += service.basePrice * state.propertySize * quantity;
-        }
-      }
-    });
-
-    // Apply frequency discount only for cleaning services
-    if (state.serviceType === 'cleaning') {
-      total *= frequencyFactors[state.frequency];
-    }
-
-    // Adjust for monthly costs based on frequency
-    const frequencyMultiplier = state.frequency === 'weekly' ? 4 : state.frequency === 'biweekly' ? 2 : 1;
-    total *= frequencyMultiplier;
-
-    return Math.round(total * 100) / 100; // Round to 2 decimal places
-  }, [state]);
-
-  const reset = useCallback(() => {
-    setState(initialState);
-  }, []);
-
-  return {
-    state,
-    updateService,
-    updatePropertySize,
-    updateFrequency,
-    updateServiceType, // Expose new function
-    calculateTotal,
-    reset
-  };
+interface ServiceSelectorProps {
+  service: ServiceOption;
+  quantity: number;
+  onQuantityChange: (quantity: number) => void;
 }
+
+export function ServiceSelector({ service, quantity, onQuantityChange }: ServiceSelectorProps) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
+      <p className="text-gray-600 mb-4">{service.description}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-blue-900 font-medium">
+          CHF {service.basePrice} / {service.unit}
+        </p>
+        {service.type === 'cleaning' ? (
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => onQuantityChange(Math.max(0, quantity - 1))}
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+            >
+              -
+            </button>
+            <span className="w-8 text-center">{quantity}</span>
+            <button
+              onClick={() => onQuantityChange(quantity + 1)}
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+            >
+              +
+            </button>
+          </div>
+        ) : (
+          <p className="text-gray-600">Pauschale: CHF {service.basePrice}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
