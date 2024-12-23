@@ -1,8 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { FormData, FormErrors } from './types';
 import { validateForm } from './validation';
+import { trackContactFormSubmission } from '../../utils/analytics';
 
-const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
 const initialFormData: FormData = {
   firstName: '',
   lastName: '',
@@ -39,21 +39,22 @@ export function useContactForm() {
     setIsSubmitting(true);
 
     try {
-      // In a real application, you would send this to your backend
-      // For now, we'll simulate an API call
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: accessKey, // You would need to replace this
-          subject: `Neue Kontaktanfrage: ${formData.subject}`,
-          from_name: `${formData.firstName} ${formData.lastName}`,
-          to_email: 'info@h-i-s.ch',
-          reply_to: formData.email,
-          message: `
+      // Track form submission before sending
+      trackContactFormSubmission(async () => {
+        try {
+          // In a real application, you would send this to your backend
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // You would need to replace this
+              subject: `Neue Kontaktanfrage: ${formData.subject}`,
+              from_name: `${formData.firstName} ${formData.lastName}`,
+              to_email: 'info@h-i-s.ch',
+              message: `
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
 Telefon: ${formData.phone}
@@ -61,21 +62,26 @@ Betreff: ${formData.subject}
 
 Nachricht:
 ${formData.message}
-          `.trim(),
-        })
+              `.trim(),
+            })
+          });
+
+          if (!response.ok) {
+            throw new Error('Failed to send message');
+          }
+
+          // Clear form on success
+          setFormData(initialFormData);
+          alert('Ihre Nachricht wurde erfolgreich gesendet!');
+        } catch (error) {
+          alert('Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
+        } finally {
+          setIsSubmitting(false);
+        }
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      // Clear form on success
-      setFormData(initialFormData);
-      alert('Ihre Nachricht wurde erfolgreich gesendet!');
     } catch (error) {
-      alert('Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
-    } finally {
       setIsSubmitting(false);
+      alert('Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
     }
   };
 
