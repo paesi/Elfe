@@ -5,7 +5,8 @@ import { services, frequencyFactors } from './data';
 const initialState: ConfiguratorState = {
   selectedServices: {},
   propertySize: 100,
-  frequency: 'monthly'
+  frequency: 'monthly',
+  serviceType: 'cleaning' // New state field for service type
 };
 
 export function useConfigurator() {
@@ -35,6 +36,14 @@ export function useConfigurator() {
     }));
   }, []);
 
+  const updateServiceType = useCallback((serviceType: 'cleaning' | 'management') => {
+    setState(prev => ({
+      ...prev,
+      serviceType,
+      selectedServices: {} // Reset selected services when changing type
+    }));
+  }, []);
+
   const calculateTotal = useCallback(() => {
     let total = 0;
 
@@ -42,7 +51,7 @@ export function useConfigurator() {
     Object.entries(state.selectedServices).forEach(([serviceId, quantity]) => {
       const service = services.find(s => s.id === serviceId);
       if (service) {
-        if (service.unit === 'm²') {
+        if (service.unit === 'm²' && service.type === 'cleaning') {
           total += service.basePrice * state.propertySize * quantity;
         } else {
           total += service.basePrice * quantity;
@@ -50,8 +59,10 @@ export function useConfigurator() {
       }
     });
 
-    // Apply frequency discount
-    total *= frequencyFactors[state.frequency];
+    // Apply frequency discount only for cleaning services
+    if (state.serviceType === 'cleaning') {
+      total *= frequencyFactors[state.frequency];
+    }
 
     return Math.round(total * 100) / 100; // Round to 2 decimal places
   }, [state]);
@@ -65,6 +76,7 @@ export function useConfigurator() {
     updateService,
     updatePropertySize,
     updateFrequency,
+    updateServiceType, // Expose new function
     calculateTotal,
     reset
   };
