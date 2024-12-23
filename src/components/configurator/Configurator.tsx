@@ -107,37 +107,35 @@ export default function Configurator() {
           </div>
 
           {/* Summary */}
-          <div className="bg-white p-6 rounded-lg shadow-md h-fit">
-            <h3 className="text-xl font-semibold mb-6 text-blue-900">
-              Ihre Auswahl
-            </h3>
-
-            <div className="space-y-4 mb-6">
-              {Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
-                const service = services.find(s => s.id === serviceId);
-                if (service && quantity > 0) {
-                  const displayQuantity =
-                    service.id === 'basic-cleaning'
-                      ? state.propertySize * quantity // Objektgröße * Anzahl
-                      : quantity;
-            
-                  return (
-                    <div key={serviceId} className="flex justify-between">
-                      <span>{service.name}</span>
-                      <span>
-                        {displayQuantity} {service.unit}
-                      </span>
-                    </div>
-                  );
-                }
-                return null;
-              })}
-              <div className="flex justify-between font-medium pt-4 border-t">
-                <span>Geschätzte Kosten</span>
-                <span>CHF {calculateTotal()}</span>
-              </div>
+          <div className="space-y-4 mb-6">
+            {Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
+              const service = services.find(s => s.id === serviceId);
+              if (service && quantity > 0) {
+                const displayQuantity =
+                  service.id === 'basic-cleaning'
+                    ? state.propertySize * quantity // Objektgröße * Anzahl
+                    : quantity;
+          
+                return (
+                  <div key={serviceId} className="flex justify-between">
+                    <span>{service.name}</span>
+                    <span>
+                      {displayQuantity} {service.unit}
+                    </span>
+                  </div>
+                );
+              }
+              return null;
+            })}
+            <div className="flex justify-between font-medium pt-4 border-t">
+              <span>Monatliche Kosten</span>
+              <span>CHF {calculateMonthlyCost()}</span>
             </div>
-
+            <div className="flex justify-between font-medium pt-4 border-t">
+              <span>Geschätzte Gesamtkosten</span>
+              <span>CHF {calculateTotal()}</span>
+            </div>
+          </div>
 
             <div className="space-y-4">
               <button
