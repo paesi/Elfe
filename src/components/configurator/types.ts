@@ -12,8 +12,6 @@ export interface ConfiguratorState {
   };
   propertySize: number;
   frequency: 'weekly' | 'biweekly' | 'monthly';
-  address: string;
-  distance: number; // in kilometers
 }
 
 export interface PricingFactors {
