@@ -2,7 +2,7 @@ import React from 'react';
 import { useConfigurator } from './useConfigurator';
 import { ServiceSelector } from './ServiceSelector';
 import { services } from './data';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
