@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { ConfiguratorState } from './types';
 import { services, frequencyFactors } from './data';
 
+  
 const initialState: ConfiguratorState = {
   selectedServices: {},
   propertySize: 100,
@@ -47,25 +48,28 @@ export function useConfigurator() {
   const calculateTotal = useCallback(() => {
     let total = 0;
 
-    // Calculate base price for each selected service
-    Object.entries(state.selectedServices).forEach(([serviceId, quantity]) => {
-      const service = services.find(s => s.id === serviceId);
-      if (service) {
-        if (service.unit === 'm²' && service.type === 'cleaning') {
-          total += service.basePrice * state.propertySize * quantity;
-        } else {
-          total += service.basePrice * quantity;
-        }
+  // Calculate base price for each selected service
+  Object.entries(state.selectedServices).forEach(([serviceId, quantity]) => {
+    const service = services.find(s => s.id === serviceId);
+    if (service) {
+      if (service.id === 'basic-cleaning') {
+        // Grundreinigung: Objektgröße * Anzahl
+        total += service.basePrice * state.propertySize * quantity;
+      } else if (service.unit === 'm²') {
+        total += service.basePrice * state.propertySize * quantity;
+      } else {
+        total += service.basePrice * quantity;
       }
-    });
-
-    // Apply frequency discount only for cleaning services
-    if (state.serviceType === 'cleaning') {
-      total *= frequencyFactors[state.frequency];
     }
+  });
 
-    return Math.round(total * 100) / 100; // Round to 2 decimal places
-  }, [state]);
+  // Apply frequency discount only for cleaning services
+  if (state.serviceType === 'cleaning') {
+    total *= frequencyFactors[state.frequency];
+  }
+
+  return Math.round(total * 100) / 100; // Round to 2 decimal places
+}, [state]);
 
   const reset = useCallback(() => {
     setState(initialState);
