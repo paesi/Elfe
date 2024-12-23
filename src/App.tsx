@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
-import References from './components/References';
 import Contact from './components/Contact';
 import Imprint from './pages/Imprint';
 import Privacy from './pages/Privacy';
@@ -23,7 +22,6 @@ export default function App() {
               <Hero />
               <ServicesSection />
               <WhyChooseUs />
-              <References />
               <Contact />
             </main>
           } />
