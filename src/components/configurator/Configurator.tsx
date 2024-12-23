@@ -4,6 +4,8 @@ import { ServiceSelector } from './ServiceSelector';
 import { services } from './data';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
 const Map = ({ address }: { address: string }) => {
   const BASE_COORDINATES = { lat: 46.851, lng: 7.579 }; // Replace with actual coordinates of base location
   const [coordinates, setCoordinates] = React.useState(BASE_COORDINATES);
@@ -13,7 +15,7 @@ const Map = ({ address }: { address: string }) => {
       fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address
-        )}&key=AIzaSyDKxzEZu4DQJ_KfDU0m-Rtkxyvyju8aauA`
+        )}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
       )
         .then((res) => res.json())
         .then((data) => {
