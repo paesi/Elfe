@@ -10,22 +10,6 @@ export const services: ServiceOption[] = [
     type: 'cleaning'
   },
   {
-    id: 'window-cleaning',
-    name: 'Fensterreinigung',
-    description: 'Professionelle Reinigung aller Fenster und Glasflächen',
-    basePrice: 12, // CHF pro Fenster
-    unit: 'Fenster',
-    type: 'cleaning'
-  },
-  {
-    id: 'maintenance',
-    name: 'Technische Wartung',
-    description: 'Regelmäßige Wartung von technischen Anlagen',
-    basePrice: 120, // CHF pro Stunde
-    unit: 'Stunden',
-    type: 'cleaning'
-  },
-  {
     id: 'property-management',
     name: 'Objektverwaltung',
     description: 'Professionelle Verwaltung und Betreuung Ihrer Immobilie',
