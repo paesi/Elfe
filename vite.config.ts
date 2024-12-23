@@ -5,6 +5,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: ['lucide-react'], // Already excluded
+    include: ['@react-google-maps/api'], // Ensure this dependency is pre-bundled
+  },
+  build: {
+    rollupOptions: {
+      external: ['@react-google-maps/api'], // Explicitly externalize this package
+    },
   },
 });
