@@ -113,32 +113,31 @@ export default function Configurator() {
             </h3>
 
             <div className="space-y-4 mb-6">
-              {selectedServiceType === 'cleaning' && (
-                Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
-                  const service = services.find(s => s.id === serviceId);
-                  if (service && quantity > 0) {
-                    return (
-                      <div key={serviceId} className="flex justify-between">
-                        <span>{service.name}</span>
-                        <span>{quantity} {service.unit}</span>
-                      </div>
-                    );
-                  }
-                  return null;
-                })
-              )}
-
-              {selectedServiceType === 'management' && (
-                <div className="flex justify-between">
-                  <span>Verwaltungskosten</span>
-                  <span>CHF {state.selectedServices['management'] || 0}</span>
-                </div>
-              )}
+              {Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
+                const service = services.find(s => s.id === serviceId);
+                if (service && quantity > 0) {
+                  const displayQuantity =
+                    service.id === 'basic-cleaning'
+                      ? state.propertySize * quantity // Objektgröße * Anzahl
+                      : quantity;
+            
+                  return (
+                    <div key={serviceId} className="flex justify-between">
+                      <span>{service.name}</span>
+                      <span>
+                        {displayQuantity} {service.unit}
+                      </span>
+                    </div>
+                  );
+                }
+                return null;
+              })}
               <div className="flex justify-between font-medium pt-4 border-t">
                 <span>Geschätzte Kosten</span>
                 <span>CHF {calculateTotal()}</span>
               </div>
             </div>
+
 
             <div className="space-y-4">
               <button
