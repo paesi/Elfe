@@ -1,5 +1,6 @@
 import React from 'react';
 import { LegalPage } from '../components/legal/LegalPage';
+import { SEO } from '../components/SEO';
 
 export default function Privacy() {
   return (
