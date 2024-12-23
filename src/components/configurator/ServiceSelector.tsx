@@ -16,21 +16,25 @@ export function ServiceSelector({ service, quantity, onQuantityChange }: Service
         <p className="text-blue-900 font-medium">
           CHF {service.basePrice} / {service.unit}
         </p>
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => onQuantityChange(Math.max(0, quantity - 1))}
-            className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
-          >
-            -
-          </button>
-          <span className="w-8 text-center">{quantity}</span>
-          <button
-            onClick={() => onQuantityChange(quantity + 1)}
-            className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
-          >
-            +
-          </button>
-        </div>
+        {service.type === 'cleaning' ? (
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => onQuantityChange(Math.max(0, quantity - 1))}
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+            >
+              -
+            </button>
+            <span className="w-8 text-center">{quantity}</span>
+            <button
+              onClick={() => onQuantityChange(quantity + 1)}
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+            >
+              +
+            </button>
+          </div>
+        ) : (
+          <p className="text-gray-600">Pauschale: CHF {service.basePrice}</p>
+        )}
       </div>
     </div>
   );
