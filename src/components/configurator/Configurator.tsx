@@ -13,7 +13,7 @@ const Map = ({ address }: { address: string }) => {
       fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address
-        )}&key=YOUR_GOOGLE_MAPS_API_KEY`
+        )}&key=AIzaSyDKxzEZu4DQJ_KfDU0m-Rtkxyvyju8aauA`
       )
         .then((res) => res.json())
         .then((data) => {
