@@ -25,7 +25,7 @@ const Map = ({ address }: { address: string }) => {
   }, [address]);
 
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+    <LoadScript googleMapsApiKey="AIzaSyDKxzEZu4DQJ_KfDU0m-Rtkxyvyju8aauA">
       <GoogleMap
         center={coordinates}
         zoom={10}
