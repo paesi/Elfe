@@ -9,14 +9,6 @@ export const services: ServiceOption[] = [
     unit: 'm²',
     type: 'cleaning'
   },
-  {
-    id: 'property-management',
-    name: 'Immobilienverwaltung',
-    description: 'Professionelle Verwaltung Ihrer Immobilie inkl. Mieterbetreuung',
-    basePrice: 2.5,
-    unit: 'm²',
-    type: 'management'
-  }
 ];
 
 export const frequencyFactors: PricingFactors = {
