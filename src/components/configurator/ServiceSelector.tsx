@@ -13,9 +13,11 @@ export function ServiceSelector({ service, quantity, onQuantityChange }: Service
       <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
       <p className="text-gray-600 mb-4">{service.description}</p>
       <div className="flex items-center justify-between">
+      {service.name !== 'Grundreinigung' && (
         <p className="text-blue-900 font-medium">
           CHF {service.basePrice} / {service.unit}
         </p>
+      )}
         {service.type === 'cleaning' ? (
           <div className="flex items-center space-x-2">
             <button
