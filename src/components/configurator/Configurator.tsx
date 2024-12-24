@@ -103,63 +103,6 @@ export default function Configurator() {
                   </div>
                   <p className="text-sm text-gray-600 mt-1">Regelmäßige Reinigung von Böden, Oberflächen und Sanitäranlagen</p>
                 </div>
-
-                {/* Treppenhaus Reinigung Input */}
-                <div>
-                  <label htmlFor="stairwellFloors" className="block text-gray-700 font-medium mb-2">
-                    Treppenhaus
-                  </label>
-                  <div className="space-y-2">
-                    <input
-                      id="stairwellFloors"
-                      type="number"
-                      min="1"
-                      placeholder="Etagen"
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                    <input
-                      id="stairwellSize"
-                      type="number"
-                      min="1"
-                      placeholder="m²"
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                    <select
-                      id="stairwellFrequency"
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="weekly">Wöchentlich</option>
-                      <option value="biweekly">Alle zwei Wochen</option>
-                      <option value="monthly">Monatlich</option>
-                    </select>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-1">Reinigung von Treppenhäusern mit Angabe von Etagen und Fläche</p>
-                </div>
-
-                {/* Büro Reinigung Input */}
-                <div>
-                  <label htmlFor="officeSize" className="block text-gray-700 font-medium mb-2">
-                    Büroreinigung
-                  </label>
-                  <div className="space-y-2">
-                    <input
-                      id="officeSize"
-                      type="number"
-                      min="1"
-                      placeholder="m²"
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                    <select
-                      id="officeFrequency"
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="weekly">Wöchentlich</option>
-                      <option value="biweekly">Alle zwei Wochen</option>
-                      <option value="monthly">Monatlich</option>
-                    </select>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-1">Regelmäßige Reinigung von Büros mit Angabe der Fläche</p>
-                </div>
               </div>
             ) : (
               <div className="bg-white p-6 rounded-lg shadow-md">
