@@ -8,7 +8,10 @@ interface ResidentialUnitsInputProps {
 export function ResidentialUnitsInput({ value, onChange }: ResidentialUnitsInputProps) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <h3 className="text-lg font-semibold mb-4">Anzahl Wohneinheiten</h3>
+      <h3 className="text-lg font-semibold mb-4">Immobilienverwaltung</h3>
+      <p className="text-gray-600 mb-4">
+        Geben Sie die Anzahl der zu verwaltenden Wohneinheiten ein.
+      </p>
       <input
         type="number"
         min="0"
