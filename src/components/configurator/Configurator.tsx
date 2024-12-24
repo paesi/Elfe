@@ -66,10 +66,19 @@ export default function Configurator() {
                 </div>
               </>
             ) : (
-              <ResidentialUnitsInput
-                value={state.residentialUnits || 0}
-                onChange={updateResidentialUnits}
-              />
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold mb-4">Immobilienverwaltung</h3>
+                <p className="text-gray-600 mb-4">
+                  Geben Sie die Anzahl der zu verwaltenden Wohneinheiten ein. Für die Verwaltung von Wohneinheiten fallen zusätzliche Kosten an.
+                </p>
+                <ResidentialUnitsInput
+                  value={state.residentialUnits || 0}
+                  onChange={updateResidentialUnits}
+                />
+                <p className="mt-4 text-gray-600">
+                  Der Grundpreis beträgt CHF 2'000, und jede Einheit wird mit CHF 500 berechnet.
+                </p>
+              </div>
             )}
 
             <div className="space-y-4">
@@ -88,7 +97,7 @@ export default function Configurator() {
             <h3 className="text-xl font-semibold mb-6 text-blue-900">
               Ihre Auswahl
             </h3>
-            
+
             <div className="space-y-4 mb-6">
               {state.serviceType === 'cleaning' ? (
                 Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
