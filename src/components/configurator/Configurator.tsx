@@ -39,22 +39,32 @@ export default function Configurator() {
             />
 
             {state.serviceType === 'cleaning' ? (
-              <>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-4">Raumgröße</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
+                <h3 className="text-lg font-semibold mb-4">Reinigungsdetails</h3>
+
+                {/* Raumgröße Input */}
+                <div>
+                  <label htmlFor="propertySize" className="block text-gray-700 font-medium mb-2">
+                    Raumgröße
+                  </label>
                   <input
+                    id="propertySize"
                     type="number"
                     min="1"
                     value={state.propertySize}
                     onChange={(e) => updatePropertySize(Math.max(1, parseInt(e.target.value) || 0))}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
-                  <p className="mt-2 text-gray-600">m²</p>
+                  <p className="text-sm text-gray-600 mt-1">m²</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-4">Häufigkeit</h3>
+                {/* Häufigkeit Dropdown */}
+                <div>
+                  <label htmlFor="frequency" className="block text-gray-700 font-medium mb-2">
+                    Häufigkeit
+                  </label>
                   <select
+                    id="frequency"
                     value={state.frequency}
                     onChange={(e) => updateFrequency(e.target.value as any)}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -64,7 +74,36 @@ export default function Configurator() {
                     <option value="monthly">Monatlich</option>
                   </select>
                 </div>
-              </>
+
+                {/* Grundreinigung Input */}
+                <div>
+                  <label htmlFor="cleaningQuantity" className="block text-gray-700 font-medium mb-2">
+                    Grundreinigung
+                  </label>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() => updateService('grundreinigung', Math.max(0, (state.selectedServices['grundreinigung'] || 0) - 1))}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+                    >
+                      -
+                    </button>
+                    <input
+                      id="cleaningQuantity"
+                      type="number"
+                      value={state.selectedServices['grundreinigung'] || 0}
+                      readOnly
+                      className="w-12 text-center border rounded-lg"
+                    />
+                    <button
+                      onClick={() => updateService('grundreinigung', (state.selectedServices['grundreinigung'] || 0) + 1)}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Regelmäßige Reinigung von Böden, Oberflächen und Sanitäranlagen</p>
+                </div>
+              </div>
             ) : (
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-lg font-semibold mb-4">Immobilienverwaltung</h3>
