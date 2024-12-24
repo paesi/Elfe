@@ -21,23 +21,6 @@ export default function Configurator() {
     service => service.type === state.serviceType
   );
 
-  const calculateCleaningCost = () => {
-    let totalCost = 0;
-    if (state.selectedServices['grundreinigung']) {
-      totalCost += state.selectedServices['grundreinigung'] * state.propertySize * 5; // Example rate: 5 CHF per m²
-    }
-    if (state.selectedServices['treppenhaus']) {
-      const stairwellCost =
-        (state.stairwellFloors || 0) * (state.stairwellSize || 0) * 3; // Example rate: 3 CHF per m² per floor
-      totalCost += stairwellCost;
-    }
-    if (state.selectedServices['buero']) {
-      const officeCost = (state.officeSize || 0) * 4; // Example rate: 4 CHF per m²
-      totalCost += officeCost;
-    }
-    return totalCost;
-  };
-
   return (
     <section className="py-16 bg-gray-50" id="configurator">
       <div className="container mx-auto px-4">
@@ -56,32 +39,22 @@ export default function Configurator() {
             />
 
             {state.serviceType === 'cleaning' ? (
-              <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
-                <h3 className="text-lg font-semibold mb-4">Reinigungsdetails</h3>
-
-                {/* Raumgröße Input */}
-                <div>
-                  <label htmlFor="propertySize" className="block text-gray-700 font-medium mb-2">
-                    Raumgröße
-                  </label>
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg font-semibold mb-4">Raumgröße</h3>
                   <input
-                    id="propertySize"
                     type="number"
                     min="1"
                     value={state.propertySize}
                     onChange={(e) => updatePropertySize(Math.max(1, parseInt(e.target.value) || 0))}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
-                  <p className="text-sm text-gray-600 mt-1">m²</p>
+                  <p className="mt-2 text-gray-600">m²</p>
                 </div>
 
-                {/* Häufigkeit Dropdown */}
-                <div>
-                  <label htmlFor="frequency" className="block text-gray-700 font-medium mb-2">
-                    Häufigkeit
-                  </label>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-lg font-semibold mb-4">Häufigkeit</h3>
                   <select
-                    id="frequency"
                     value={state.frequency}
                     onChange={(e) => updateFrequency(e.target.value as any)}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -91,36 +64,7 @@ export default function Configurator() {
                     <option value="monthly">Monatlich</option>
                   </select>
                 </div>
-
-                {/* Grundreinigung Input */}
-                <div>
-                  <label htmlFor="cleaningQuantity" className="block text-gray-700 font-medium mb-2">
-                    Grundreinigung
-                  </label>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => updateService('grundreinigung', Math.max(0, (state.selectedServices['grundreinigung'] || 0) - 1))}
-                      className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                    >
-                      -
-                    </button>
-                    <input
-                      id="cleaningQuantity"
-                      type="number"
-                      value={state.selectedServices['grundreinigung'] || 0}
-                      readOnly
-                      className="w-12 text-center border rounded-lg"
-                    />
-                    <button
-                      onClick={() => updateService('grundreinigung', (state.selectedServices['grundreinigung'] || 0) + 1)}
-                      className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-1">Regelmäßige Reinigung von Böden, Oberflächen und Sanitäranlagen</p>
-                </div>
-              </div>
+              </>
             ) : (
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-lg font-semibold mb-4">Immobilienverwaltung</h3>
@@ -156,12 +100,23 @@ export default function Configurator() {
 
             <div className="space-y-4 mb-6">
               {state.serviceType === 'cleaning' ? (
-                <div>
-                  <div className="flex justify-between font-medium">
-                    <span>Reinigungskosten</span>
-                    <span>CHF {calculateCleaningCost()}</span>
-                  </div>
-                </div>
+                Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
+                  const service = services.find(s => s.id === serviceId);
+                  if (service && quantity > 0) {
+                    return (
+                      <div key={serviceId} className="flex flex-col space-y-1">
+                        <div className="flex justify-between">
+                          <span>{service.name}</span>
+                          <span>{quantity} × {state.propertySize} m²</span>
+                        </div>
+                        <div className="text-sm text-gray-500 text-right">
+                          Gesamt: {quantity * state.propertySize} m²
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                })
               ) : (
                 <div className="flex flex-col space-y-2">
                   <div className="flex justify-between">
@@ -176,7 +131,7 @@ export default function Configurator() {
               )}
               <div className="flex justify-between font-medium pt-4 border-t">
                 <span>{state.serviceType === 'cleaning' ? 'Monatliche Kosten' : 'Jährliche Kosten'}</span>
-                <span>CHF {state.serviceType === 'cleaning' ? calculateCleaningCost() : calculateTotal()}</span>
+                <span>CHF {calculateTotal()}</span>
               </div>
             </div>
 
