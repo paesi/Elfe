@@ -5,6 +5,7 @@ export const services: ServiceOption[] = [
     id: 'basic-cleaning',
     name: 'Grundreinigung',
     description: 'Regelmäßige Reinigung von Böden, Oberflächen und Sanitäranlagen',
+    basePrice: 3.5,
     unit: 'm²',
     type: 'cleaning'
   },
