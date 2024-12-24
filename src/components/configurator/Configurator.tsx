@@ -21,6 +21,23 @@ export default function Configurator() {
     service => service.type === state.serviceType
   );
 
+  const calculateCleaningCost = () => {
+    let totalCost = 0;
+    if (state.selectedServices['grundreinigung']) {
+      totalCost += state.selectedServices['grundreinigung'] * state.propertySize * 5; // Example rate: 5 CHF per m²
+    }
+    if (state.selectedServices['treppenhaus']) {
+      const stairwellCost =
+        (state.stairwellFloors || 0) * (state.stairwellSize || 0) * 3; // Example rate: 3 CHF per m² per floor
+      totalCost += stairwellCost;
+    }
+    if (state.selectedServices['buero']) {
+      const officeCost = (state.officeSize || 0) * 4; // Example rate: 4 CHF per m²
+      totalCost += officeCost;
+    }
+    return totalCost;
+  };
+
   return (
     <section className="py-16 bg-gray-50" id="configurator">
       <div className="container mx-auto px-4">
@@ -139,23 +156,12 @@ export default function Configurator() {
 
             <div className="space-y-4 mb-6">
               {state.serviceType === 'cleaning' ? (
-                Object.entries(state.selectedServices).map(([serviceId, quantity]) => {
-                  const service = services.find(s => s.id === serviceId);
-                  if (service && quantity > 0) {
-                    return (
-                      <div key={serviceId} className="flex flex-col space-y-1">
-                        <div className="flex justify-between">
-                          <span>{service.name}</span>
-                          <span>{quantity} × {state.propertySize} m²</span>
-                        </div>
-                        <div className="text-sm text-gray-500 text-right">
-                          Gesamt: {quantity * state.propertySize} m²
-                        </div>
-                      </div>
-                    );
-                  }
-                  return null;
-                })
+                <div>
+                  <div className="flex justify-between font-medium">
+                    <span>Reinigungskosten</span>
+                    <span>CHF {calculateCleaningCost()}</span>
+                  </div>
+                </div>
               ) : (
                 <div className="flex flex-col space-y-2">
                   <div className="flex justify-between">
@@ -170,7 +176,7 @@ export default function Configurator() {
               )}
               <div className="flex justify-between font-medium pt-4 border-t">
                 <span>{state.serviceType === 'cleaning' ? 'Monatliche Kosten' : 'Jährliche Kosten'}</span>
-                <span>CHF {calculateTotal()}</span>
+                <span>CHF {state.serviceType === 'cleaning' ? calculateCleaningCost() : calculateTotal()}</span>
               </div>
             </div>
 
