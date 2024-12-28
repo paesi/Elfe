@@ -3,6 +3,8 @@ import { FormData, FormErrors } from './types';
 import { validateForm } from './validation';
 import { trackContactFormSubmission } from '../../utils/analytics';
 
+const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
 const initialFormData: FormData = {
   firstName: '',
   lastName: '',
@@ -50,7 +52,7 @@ export function useContactForm() {
               'Accept': 'application/json'
             },
             body: JSON.stringify({
-              access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // You would need to replace this
+              access_key: accessKey, // You would need to replace this
               subject: `Neue Kontaktanfrage: ${formData.subject}`,
               from_name: `${formData.firstName} ${formData.lastName}`,
               to_email: 'info@h-i-s.ch',
