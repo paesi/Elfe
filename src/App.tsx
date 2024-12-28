@@ -13,6 +13,7 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import { SEO } from './components/SEO';
 import { GoogleAnalytics } from './components/analytics/GoogleAnalytics';
+import ThankYouPage from './components/pages/ThankYouPage';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/imprint" element={<Imprint />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
           </Routes>
 
           <Footer />
