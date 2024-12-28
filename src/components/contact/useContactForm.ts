@@ -2,6 +2,7 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import { FormData, FormErrors } from './types';
 import { validateForm } from './validation';
 import { trackContactFormSubmission } from '../../utils/analytics';
+import { useNavigate } from 'react-router-dom';
 
 const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
 
@@ -14,24 +15,24 @@ const initialFormData: FormData = {
   message: '',
 };
 
+
 export function useContactForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Validate form
+
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -41,22 +42,19 @@ export function useContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Track form submission before sending
-      trackContactFormSubmission(async () => {
-        try {
-          // In a real application, you would send this to your backend
-          const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-              access_key: accessKey, // You would need to replace this
-              subject: `Neue Kontaktanfrage: ${formData.subject}`,
-              from_name: `${formData.firstName} ${formData.lastName}`,
-              to_email: 'info@h-i-s.ch',
-              message: `
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Neue Kontaktanfrage: ${formData.subject}`,
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          to_email: 'info@h-i-s.ch',
+          reply_to: formData.email,
+          message: `
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
 Telefon: ${formData.phone}
