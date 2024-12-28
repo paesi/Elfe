@@ -13,7 +13,7 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import { SEO } from './components/SEO';
 import { GoogleAnalytics } from './components/analytics/GoogleAnalytics';
-import ThankYouPage from './components/pages/ThankYouPage';
+import ThankYouPage from './pages/ThankYouPage';
 
 export default function App() {
   return (
