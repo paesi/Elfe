@@ -15,16 +15,16 @@ const services = [
   },
   {
     title: 'Fachkräftegewinnung und Mitarbeiterbindung',
-    description: 'Wir helfen Ihnen, die besten Talente zu finden und zu binden – durch modernes Employer Branding und effizientes Recruiting.',
+    description: 'Wir helfen Ihnen, die besten Talente zu finden und zu binden — durch modernes Employer Branding und effizientes Recruiting.',
     icon: Users
   }
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 bg-gray-50">
+    <section id="services" className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
+        <h2 className="text-3xl font-bold text-center mb-4 text-primary">
           Unsere Dienstleistungen
         </h2>
         <div className="grid grid-cols-1 gap-8">
