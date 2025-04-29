@@ -47,7 +47,7 @@ export default function Contact() {
                 <div>
                   <p className="font-medium">E-Mail</p>
                   <a href="mailto:info@h-i-s.ch" className="text-gray-600 hover:text-blue-600">
-                    info@h-i-s.ch
+                    info@epexon.com
                   </a>
                 </div>
               </div>
