@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Hofmann-Immo-Service</h3>
+            <h3 className="text-xl font-bold mb-4">Epexon</h3>
             <p className="text-blue-100">
-              Ihr Partner für professionelle Immobiliendienstleistungen in Bern.
+              Ihr Partner für maßgeschneiderten Unternehmenserfolg
             </p>
           </div>
           
@@ -19,7 +19,7 @@ export default function Footer() {
               <p>Vorderdorfstrasse 1b</p>
               <p>3114 Wichtrach</p>
               <p>Tel: +41 79 735 60 59</p>
-              <p>info@h-i-s.ch</p>
+              <p>info@epexon.com</p>
             </address>
           </div>
           
@@ -27,8 +27,6 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Öffnungszeiten</h4>
             <div className="text-blue-100">
               <p>Mo-Fr: 08:00 - 17:00</p>
-              <p>Sa: 08:00 - 16:00</p>
-              <p>So: Geschlossen</p>
             </div>
           </div>
           
@@ -50,7 +48,7 @@ export default function Footer() {
         
         <div className="border-t border-blue-800 mt-8 pt-8 text-sm text-blue-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2024 Hofmann-Immo-Service. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2024 Epexon. Alle Rechte vorbehalten.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a href="/privacy" className="hover:text-white">Datenschutz</a>
               <a href="/imprint" className="hover:text-white">Impressum</a>
