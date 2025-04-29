@@ -1,7 +1,7 @@
 import React from 'react';
-import JorickImage from '../../assets/team/Jorick.jpeg';
-import PascalImage from '../../assets/team/Pascal.jpg';
-import RubenImage from '../../assets/team/Ruben.jpeg';
+import JorickImage from '../assets/team/Jorick.jpeg';
+import PascalImage from '../assets/team/Pascal.jpg';
+import RubenImage from '../assets/team/Ruben.jpeg';
 
 const team = [
   {
