@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-darkgreen text-white shadow-md fixed w-full z-50">
+    <header className="bg-background text-primary shadow-md fixed w-full z-50">
       <div className="py-2">
         <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
           <a href="tel:+41797356059" className="flex items-center space-x-2 hover:text-highlight">
