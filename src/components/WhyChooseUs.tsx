@@ -1,23 +1,26 @@
 import React from 'react';
+import JorickImage from '../../assets/team/Jorick.jpeg';
+import PascalImage from '../../assets/team/Pascal.jpg';
+import RubenImage from '../../assets/team/Ruben.jpeg';
 
 const team = [
   {
     name: 'Jorick Mischler',
     position: 'Verhandlungsexperte',
     description: 'Jorick sorgt für wirkungsvolle Verhandlungen, erfolgreichen Vertrieb und effektives Marketing.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=500'
+    image: JorickImage,
   },
   {
     name: 'Ruben Meier',
     position: 'Strategieberater',
     description: 'Ruben berät Unternehmen dabei, wegweisende Strategien zu entwickeln und nachhaltiges Wachstum zu generieren.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500'
+    image: RubenImage,
   },
   {
     name: 'Pascal Hofmann',
     position: 'Business Analyst',
     description: 'Pascal treibt digitale Innovation voran und optimiert Geschäftsprozesse für mehr Effizienz und Agilität.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=500'
+    image: PascalImage,
   }
 ];
 
