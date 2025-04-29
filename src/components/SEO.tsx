@@ -9,9 +9,9 @@ interface SEOProps {
 }
 
 export function SEO({ 
-  title = 'Hofmann Immo-Service | Professionelle Immobilienpflege in Bern',
-  description = 'Ihr zuverlässiger Partner für Reinigung, Wartung, Reparatur und Verwaltung von Immobilien in Bern. ✓ 20+ Jahre Erfahrung ✓ 24/7 Notfallservice',
-  canonical = 'https://www.hofmann-immo-service.ch',
+  title = 'Epexon - Massgeschneiderte Unternehmensberatung',
+  description = 'Ihr Partner für masgeschneiderten Unternehmenserfolg,
+  canonical = 'https://www.epexon.com',
   type = 'website'
 }: SEOProps) {
   return (
