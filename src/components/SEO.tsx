@@ -10,7 +10,7 @@ interface SEOProps {
 
 export function SEO({ 
   title = 'Epexon - Massgeschneiderte Unternehmensberatung',
-  description = 'Ihr Partner für masgeschneiderten Unternehmenserfolg,
+  description = 'Ihr Partner für masgeschneiderten Unternehmenserfolg'
   canonical = 'https://www.epexon.com',
   type = 'website'
 }: SEOProps) {
