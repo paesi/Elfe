@@ -3,8 +3,8 @@ import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-background text-primary shadow-md fixed w-full z-50">
+      <div className="py-2">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Epexon</h3>
