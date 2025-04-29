@@ -35,9 +35,9 @@ export default function Header() {
             <Phone size={16} />
             <span>+41 79 735 60 59</span>
           </a>
-          <a href="mailto:info@h-i-s.ch" className="flex items-center space-x-2 hover:text-blue-200">
+          <a href="mailto:info@epexon.com" className="flex items-center space-x-2 hover:text-blue-200">
             <Mail size={16} />
-            <span>info@h-i-s.ch</span>
+            <span>info@epexon.com</span>
           </a>
         </div>
       </div>
