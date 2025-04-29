@@ -47,7 +47,7 @@ export default function Header() {
             onClick={() => scrollToSection('hero')} 
             className="text-2xl font-bold text-blue-900"
           >
-            Hofmann-Immo-Service
+            Epexon
           </button>
           
           <div className="hidden md:flex space-x-6">
