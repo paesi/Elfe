@@ -12,7 +12,6 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     if (window.location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -29,14 +28,14 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md fixed w-full z-50">
-      <div className="bg-blue-900 text-white py-2">
+    <header className="bg-darkgreen text-white shadow-md fixed w-full z-50">
+      <div className="py-2">
         <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
-          <a href="tel:+41797356059" className="flex items-center space-x-2 hover:text-blue-200">
+          <a href="tel:+41797356059" className="flex items-center space-x-2 hover:text-highlight">
             <Phone size={16} />
             <span>+41 79 735 60 59</span>
           </a>
-          <a href="mailto:info@epexon.com" className="flex items-center space-x-2 hover:text-blue-200">
+          <a href="mailto:info@epexon.com" className="flex items-center space-x-2 hover:text-highlight">
             <Mail size={16} />
             <span>info@epexon.com</span>
           </a>
@@ -48,7 +47,6 @@ export default function Header() {
             <img src={Logo} alt="Logo" className="h-14 w-auto" />
           </button>
 
-          
           <div className="hidden md:flex space-x-6">
             <NavButton onClick={() => scrollToSection('hero')}>Home</NavButton>
             <NavButton onClick={() => scrollToSection('services')}>Dienstleistungen</NavButton>
@@ -56,7 +54,7 @@ export default function Header() {
             <NavButton onClick={() => scrollToSection('contact')}>Kontakt</NavButton>
           </div>
 
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -76,3 +74,4 @@ export default function Header() {
     </header>
   );
 }
+
