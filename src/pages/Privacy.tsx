@@ -23,7 +23,7 @@ export default function Privacy() {
           <p>3114 Wichtrach</p>
           <p>Schweiz</p>
           <p>Telefon: 079 735 60 59</p>
-          <p>E-Mail: info@h-i-s.ch</p>
+          <p>E-Mail: info@epexon.com</p>
         </address>
 
         <h2>3. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck der Verwendung</h2>
