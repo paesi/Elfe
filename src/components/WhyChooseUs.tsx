@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
             <div key={member.name} className="text-center">
               <img src={member.image} alt={member.name} className="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-md" />
               <h3 className="text-xl font-semibold mb-2 text-primary">{member.name}</h3>
-              <p className="text-highlight mb-2">{member.position}</p>
+              <p className="text-primary mb-2">{member.position}</p>
               <p className="text-secondary">{member.description}</p>
             </div>
           ))}
