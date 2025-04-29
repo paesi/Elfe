@@ -5,7 +5,7 @@ import { Target, Building2, Users } from 'lucide-react';
 const services = [
   {
     title: 'Kundengewinnung und Marketing',
-    description: 'Wir entwickeln maßgeschneiderte Marketingstrategien, die Ihr Unternehmen vom Wettbewerb abheben. Durch datengetriebene Analysen und innovative Kampagnen steigern wir Ihre Kundengewinnung nachhaltig.',
+    description: 'Wir entwickeln massgeschneiderte Marketingstrategien, die Ihr Unternehmen vom Wettbewerb abheben. Durch datengetriebene Analysen und innovative Kampagnen steigern wir Ihre Kundengewinnung nachhaltig.',
     icon: Target
   },
   {
@@ -31,9 +31,9 @@ export default function ServicesSection() {
           {services.map((service) => (
             <ServiceCard
               key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
+              title={<span className="text-primary">{service.title}</span>}
+              description={<span className="text-secondary">{service.description}</span>}
+              icon={(props) => <service.icon {...props} className="text-highlight" />}
             />
           ))}
         </div>
