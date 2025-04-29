@@ -20,7 +20,7 @@ export default function Imprint() {
         <h3>Kontakt:</h3>
         <p>
           Telefon: 0797356059<br />
-          E-Mail: <a href="mailto:info@h-i-s.ch">info@h-i-s.ch</a><br />
+          E-Mail: <a href="mailto:info@h-i-s.ch">info@epexon.com</a><br />
           Website: <a href="http://www.hofmann-immo-service.ch" target="_blank" rel="noopener noreferrer">www.hofmann-immo-service.ch</a>
         </p>
 
