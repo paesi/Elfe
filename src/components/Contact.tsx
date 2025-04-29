@@ -4,12 +4,12 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 bg-gray-50">
+    <section id="contact" className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
+        <h2 className="text-3xl font-bold text-center mb-4 text-primary">
           Kontaktieren Sie uns
         </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-secondary text-center mb-12 max-w-2xl mx-auto">
           Haben Sie Fragen oder möchten Sie ein Angebot? Wir freuen uns auf Ihre Nachricht.
         </p>
 
@@ -19,44 +19,44 @@ export default function Contact() {
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-lg h-fit">
-            <h3 className="text-xl font-semibold mb-6 text-blue-900">
+            <h3 className="text-xl font-semibold mb-6 text-primary">
               Kontaktinformationen
             </h3>
             
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="text-blue-600 mt-1" />
+                <MapPin className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">Adresse</p>
-                  <p className="text-gray-600">Vorderdorfstrasse 1b<br />3114 Wichtrach</p>
+                  <p className="text-secondary">Vorderdorfstrasse 1b<br />3114 Wichtrach</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
-                <Phone className="text-blue-600 mt-1" />
+                <Phone className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">Telefon</p>
-                  <a href="tel:+41797356059" className="text-gray-600 hover:text-blue-600">
+                  <a href="tel:+41797356059" className="text-secondary hover:text-highlight">
                     +41 79 735 60 59
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
-                <Mail className="text-blue-600 mt-1" />
+                <Mail className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">E-Mail</p>
-                  <a href="mailto:info@h-i-s.ch" className="text-gray-600 hover:text-blue-600">
+                  <a href="mailto:info@epexon.com" className="text-secondary hover:text-highlight">
                     info@epexon.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
-                <Clock className="text-blue-600 mt-1" />
+                <Clock className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">Öffnungszeiten</p>
-                  <p className="text-gray-600">Mo-Fr: 08:00 - 17:00<br />Sa-So: Geschlossen</p>
+                  <p className="text-secondary">Mo-Fr: 08:00 - 17:00<br />Sa-So: Geschlossen</p>
                 </div>
               </div>
             </div>
