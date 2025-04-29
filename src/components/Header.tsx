@@ -3,6 +3,7 @@ import { Menu, X, Phone, Mail } from 'lucide-react';
 import { NavButton } from './navigation/NavButton';
 import { MobileNavButton } from './navigation/MobileNavButton';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../assets/logo Epexon.jpeg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,12 +44,10 @@ export default function Header() {
       </div>
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <button 
-            onClick={() => scrollToSection('hero')} 
-            className="text-2xl font-bold text-blue-900"
-          >
-            Epexon
+          <button onClick={() => scrollToSection('hero')} className="flex items-center space-x-2">
+            <img src={Logo} alt="Logo" className="h-10 w-auto" />
           </button>
+
           
           <div className="hidden md:flex space-x-6">
             <NavButton onClick={() => scrollToSection('hero')}>Home</NavButton>
