@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Epexon</h3>
             <p className="text-primary">
-              Ihr Partner für maßgeschneiderten Unternehmenserfolg
+              Ihr Partner für massgeschneiderten Unternehmenserfolg
             </p>
           </div>
           
