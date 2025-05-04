@@ -1,33 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Elfe1 from '../assets/elfe/1.jpg';
+import Elfe2 from '../assets/elfe/2.jpg';
+import Elfe3 from '../assets/elfe/3.jpg';
+
+const elfeImages = [Elfe1, Elfe2, Elfe3];
 
 export default function Elfe() {
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => setCurrent((current - 1 + elfeImages.length) % elfeImages.length);
+  const nextSlide = () => setCurrent((current + 1) % elfeImages.length);
+
   return (
-    <main className="py-16 px-4 bg-background text-primary">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold mb-6 text-center">Die Dampflok „Elfe“</h1>
-        <p className="mb-6 text-secondary text-lg">
-          Die Lokomotive „Elfe“ wurde Anfang des 20. Jahrhunderts gebaut und diente jahrzehntelang im Steinbruchbetrieb. 
-          Sie ist ein bedeutendes Stück Industriegeschichte und steht heute im Zentrum unseres Vereinsprojekts zur Restaurierung.
-        </p>
+    <section id="elfe" className="py-16 px-4 bg-background text-primary">
+      <div className="container mx-auto max-w-4xl text-center">
+        <h1 className="text-4xl font-bold mb-6">Die Dampflok „Elfe“</h1>
+        
+        {/* Karussell */}
+        <div className="relative mb-8">
+          <img
+            src={elfeImages[current]}
+            alt={`Elfe Bild ${current + 1}`}
+            className="mx-auto rounded-lg shadow-lg max-h-[400px] object-contain"
+          />
+          <button onClick={prevSlide} className="absolute top-1/2 left-0 -translate-y-1/2 px-4 text-2xl">‹</button>
+          <button onClick={nextSlide} className="absolute top-1/2 right-0 -translate-y-1/2 px-4 text-2xl">›</button>
+        </div>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Historie der Lok</h2>
-        <p className="mb-6 text-secondary">
-          Die „Elfe“ wurde 1911 von der Maschinenfabrik Esslingen gefertigt und war bis in die 1960er Jahre im Einsatz. 
-          Ihre robuste Konstruktion und das charakteristische Erscheinungsbild machten sie zum Herzstück des Steinbruchbetriebs.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Restaurierung</h2>
-        <p className="mb-6 text-secondary">
-          Der Verein hat sich das Ziel gesetzt, die Lokomotive in ihren Originalzustand zu versetzen. 
-          Viele Bauteile sind noch erhalten, andere müssen nachgebaut werden. Die Arbeiten erfolgen mit großer Sorgfalt und viel ehrenamtlichem Engagement.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Mitmachen</h2>
-        <p className="text-secondary">
-          Sie möchten helfen? Ob mit Know-how, Zeit oder finanzieller Unterstützung – wir freuen uns über jede Form der Beteiligung!
+        <p className="text-secondary text-lg">
+          Die Lokomotive „Elfe“ wird mit viel Liebe zum Detail restauriert...
         </p>
       </div>
-    </main>
+    </section>
   );
 }
 
