@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Elfe1 from '../assets/elfe/1.jpg';
-import Elfe2 from '../assets/elfe/2.jpg';
-import Elfe3 from '../assets/elfe/3.jpg';
+import Elfe1 from '../assets/elfeputz_07.jpg';
+import Elfe2 from '../assets/elfe_historic.jpg';
+import Elfe3 from '../assets/elfe_zeichnung.jpg';
 
 const elfeSlides = [
   {
