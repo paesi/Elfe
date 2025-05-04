@@ -1,43 +1,65 @@
 import React from 'react';
+import PraesidentImg from '../assets/team/praesident.jpg';
+import VizeImg from '../assets/team/vizepraesident.jpg';
+import WerkstattImg from '../assets/team/werkstattchef.jpg';
+
+const team = [
+  {
+    name: 'Hans Meier',
+    rolle: 'Präsident',
+    bild: PraesidentImg,
+    beschreibung:
+      'Hans ist unser Gründungsmitglied und Herz des Vereins. Er koordiniert alle Aktivitäten und steht mit Leidenschaft hinter dem Projekt.',
+  },
+  {
+    name: 'Sabine Keller',
+    rolle: 'Vizepräsidentin',
+    bild: VizeImg,
+    beschreibung:
+      'Sabine bringt organisatorisches Talent und Technikbegeisterung zusammen. Sie betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
+  },
+  {
+    name: 'Markus Steiner',
+    rolle: 'Werkstattchef',
+    bild: WerkstattImg,
+    beschreibung:
+      'Markus ist für die praktische Umsetzung der Restaurierungsarbeiten verantwortlich – mit jahrzehntelanger Erfahrung im Metallbau.',
+  },
+];
 
 export default function Verein() {
   return (
-    <main className="py-16 px-4 bg-background text-primary">
+    <section id="verein" className="py-16 px-4 bg-background text-primary">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold mb-6 text-center">Der Verein</h1>
 
-        <p className="mb-6 text-secondary text-lg">
-          Unser Verein wurde gegründet, um die Dampflok „Elfe“ zu restaurieren und die Geschichte des lokalen Steinbruchs zu bewahren.
-          Wir setzen uns leidenschaftlich für den Erhalt historischer Technik ein – ehrenamtlich, gemeinnützig und mit viel Herzblut.
+        <p className="mb-6 text-secondary text-lg text-center">
+          Unser Verein setzt sich für die Restaurierung der Dampflok „Elfe“ und die Bewahrung der Geschichte des Steinbruchs ein. 
+          Ehrenamtlich, gemeinnützig und mit Herz.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Ziele</h2>
-        <ul className="list-disc list-inside text-secondary space-y-2 mb-6">
-          <li>Restaurierung der Lokomotive „Elfe“</li>
-          <li>Dokumentation und Aufarbeitung der Geschichte des Steinbruchs</li>
-          <li>Öffentlichkeitsarbeit zur Förderung von Technikgeschichte</li>
-          <li>Langfristig: Aufbau eines kleinen Technikmuseums</li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4 mt-12 text-center">Unser Vorstand</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          {team.map((mitglied) => (
+            <div key={mitglied.name} className="text-center">
+              <img
+                src={mitglied.bild}
+                alt={mitglied.name}
+                className="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-md"
+              />
+              <h3 className="text-xl font-bold mb-1 text-primary">{mitglied.name}</h3>
+              <p className="text-highlight font-medium mb-2">{mitglied.rolle}</p>
+              <p className="text-secondary text-sm">{mitglied.beschreibung}</p>
+            </div>
+          ))}
+        </div>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Das Team</h2>
-        <p className="mb-6 text-secondary">
-          Unser Team besteht aus Eisenbahnliebhabern, Technikfans, Historikern und engagierten Menschen aus der Region. 
-          Jeder bringt sein Wissen und seine Fähigkeiten ein – vom Schweißer bis zur Fotografin.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Mitglied werden</h2>
-        <p className="mb-6 text-secondary">
-          Möchten Sie unsere Arbeit unterstützen? Werden Sie Mitglied in unserem Verein! 
-          Ob aktiv bei der Restaurierung oder fördernd durch Ihren Beitrag – jede Hilfe zählt.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4 mt-8">Kontakt</h2>
-        <p className="text-secondary">
-          Schreiben Sie uns eine E-Mail oder besuchen Sie uns vor Ort. 
-          Die Kontaktmöglichkeiten finden Sie auf unserer <a href="/#contact" className="text-highlight hover:underline">Kontaktseite</a>.
+        <h2 className="text-2xl font-semibold mb-4 mt-12">Mitglied werden</h2>
+        <p className="text-secondary mb-6">
+          Ob aktiv mitanpacken oder durch einen Beitrag unterstützen – wir freuen uns über neue Mitglieder! 
+          Kontaktieren Sie uns einfach über das <a href="/#contact" className="text-highlight hover:underline">Kontaktformular</a>.
         </p>
       </div>
-    </main>
+    </section>
   );
 }
-
