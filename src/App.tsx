@@ -28,6 +28,9 @@ export default function App() {
     <Route path="/" element={
       <main className="flex-grow pt-[104px]">
         <Hero />
+        <Elfe />
+        <Steinbruch />
+        <Verein />
         <Contact />
       </main>
     } />
