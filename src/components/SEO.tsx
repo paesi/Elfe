@@ -9,9 +9,9 @@ interface SEOProps {
 }
 
 export function SEO({ 
-  title = 'Epexon - Massgeschneiderte Unternehmensberatung',
-  description = 'Ihr Partner für masgeschneiderten Unternehmenserfolg',
-  canonical = 'https://www.epexon.com',
+  title = 'Elfe - Historische Steinbruchbahn Ostermundigen',
+  description = 'Restauration einer Legende',
+  canonical = 'https://www.historic-elfe.ch',
   type = 'website'
 }: SEOProps) {
   return (
