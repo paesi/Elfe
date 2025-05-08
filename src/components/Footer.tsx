@@ -30,9 +30,9 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-2">Kontakt</h4>
           <address className="not-italic text-secondary space-y-1">
             <p>Verein Dampflok Elfe</p>
-            <p>Beispielweg 1</p>
-            <p>1234 Musterort</p>
-            <p><a href="mailto:info@dampflok-elfe.ch" className="hover:text-highlight">info@dampflok-elfe.ch</a></p>
+            <p>Bernstrasse 62</p>
+            <p>3072 Ostermundigen</p>
+            <p><a href="mailto:info@dampflok-elfe.ch" className="hover:text-highlight">info@steinbruch.be</a></p>
           </address>
         </div>
 
