@@ -5,21 +5,21 @@ import WerkstattImg from '../assets/Pascal.jpg';
 
 const team = [
   {
-    name: 'Hans Meier',
+    name: 'Marc Robinson',
     rolle: 'Präsident',
     bild: PraesidentImg,
     beschreibung:
       'Hans ist unser Gründungsmitglied und Herz des Vereins. Er koordiniert alle Aktivitäten und steht mit Leidenschaft hinter dem Projekt.',
   },
   {
-    name: 'Sabine Keller',
+    name: 'Peter Hofmann',
     rolle: 'Vizepräsidentin',
     bild: VizeImg,
     beschreibung:
       'Sabine bringt organisatorisches Talent und Technikbegeisterung zusammen. Sie betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
   },
   {
-    name: 'Markus Steiner',
+    name: 'Jean-Marc Margot',
     rolle: 'Werkstattchef',
     bild: WerkstattImg,
     beschreibung:
