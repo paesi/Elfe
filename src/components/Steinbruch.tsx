@@ -1,7 +1,7 @@
 import React from 'react';
-import Bruch1 from '../assets/Elfe_historic.jpg'; // Beispielbild
-import Bruch2 from '../assets/Elfeputz_07.jpg';   // kannst später eigene Steinbruchbilder einsetzen
-import Bruch3 from '../assets/Elfe_zeichnung.jpg';
+import Bruch1 from '../assets/Rekonstruktion_steinbruchbahn.jpg'; // Beispielbild
+import Bruch2 from '../assets/Steinbrecherhuesli.jpg';   // kannst später eigene Steinbruchbilder einsetzen
+import Bruch3 from '../assets/Pferde.jpg';
 
 const inhalte = [
   {
