@@ -21,7 +21,7 @@ export default function Hero() {
           href="#verein"
           className="inline-block bg-highlight text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-primary transition"
         >
-          Jetzt mitmachen
+          Mehr Erfahren
         </a>
       </div>
     </section>
