@@ -33,11 +33,11 @@ export default function Header() {
         <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
           <a href="tel:+41797356059" className="flex items-center space-x-2 hover:text-highlight">
             <Phone size={16} />
-            <span>+41 79 735 60 59</span>
+            <span>+41 79 602 18 12</span>
           </a>
           <a href="mailto:info@epexon.com" className="flex items-center space-x-2 hover:text-highlight">
             <Mail size={16} />
-            <span>info@epexon.com</span>
+            <span>info@steinbruch.be</span>
           </a>
         </div>
       </div>
