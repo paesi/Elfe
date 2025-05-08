@@ -48,7 +48,7 @@ export default function Verein() {
                 className="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-md"
               />
               <h3 className="text-xl font-bold mb-1 text-primary">{mitglied.name}</h3>
-              <p className="text-highlight font-medium mb-2">{mitglied.rolle}</p>
+              <p className="text-primary font-medium mb-2">{mitglied.rolle}</p>
               <p className="text-secondary text-sm">{mitglied.beschreibung}</p>
             </div>
           ))}
