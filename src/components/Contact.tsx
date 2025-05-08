@@ -28,7 +28,7 @@ export default function Contact() {
                 <MapPin className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">Adresse</p>
-                  <p className="text-secondary">Vorderdorfstrasse 1b<br />3114 Wichtrach</p>
+                  <p className="text-secondary">Bernstrasse 62<br />3072 Ostermundigen</p>
                 </div>
               </div>
 
@@ -36,8 +36,8 @@ export default function Contact() {
                 <Phone className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">Telefon</p>
-                  <a href="tel:+41797356059" className="text-secondary hover:text-highlight">
-                    +41 79 735 60 59
+                  <a href="tel:+4177602182" className="text-secondary hover:text-highlight">
+                    +41 79 602 18 12
                   </a>
                 </div>
               </div>
@@ -46,18 +46,12 @@ export default function Contact() {
                 <Mail className="text-highlight mt-1" />
                 <div>
                   <p className="font-medium">E-Mail</p>
-                  <a href="mailto:info@epexon.com" className="text-secondary hover:text-highlight">
-                    info@epexon.com
+                  <a href="mailto:info@steinbruch.be" className="text-secondary hover:text-highlight">
+                    info@steinbruch.be
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <Clock className="text-highlight mt-1" />
-                <div>
-                  <p className="font-medium">Öffnungszeiten</p>
-                  <p className="text-secondary">Mo-Fr: 08:00 - 17:00<br />Sa-So: Geschlossen</p>
-                </div>
               </div>
             </div>
           </div>
