@@ -1,7 +1,7 @@
 import React from 'react';
-import PraesidentImg from '../assets/team/praesident.jpg';
-import VizeImg from '../assets/team/vizepraesident.jpg';
-import WerkstattImg from '../assets/team/werkstattchef.jpg';
+import PraesidentImg from '../assets/Pascal.jpg';
+import VizeImg from '../assets/Pascal.jpg';
+import WerkstattImg from '../assets/Pascal.jpg';
 
 const team = [
   {
