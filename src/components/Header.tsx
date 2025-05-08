@@ -49,10 +49,10 @@ export default function Header() {
 
           <div className="hidden md:flex space-x-6">
             <NavButton onClick={() => scrollToSection('hero')}>Home</NavButton>
-            <NavButton onClick={() => scrollToSection('/elfe')}>Elfe</NavButton>
-            <NavButton onClick={() => scrollToSection('/steinbruch')}>Steinbruch</NavButton>
+            <NavButton onClick={() => scrollToSection('elfe')}>Elfe</NavButton>
+            <NavButton onClick={() => scrollToSection('steinbruch')}>Steinbruch</NavButton>
             <NavButton onClick={() => scrollToSection('verein')}>Der Verein</NavButton>
-            <NavButton onClick={() => scrollToSection('/#contact')}>Kontakt</NavButton>
+            <NavButton onClick={() => scrollToSection('#contact')}>Kontakt</NavButton>
           </div>
 
           <button
@@ -66,9 +66,9 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
             <MobileNavButton onClick={() => scrollToSection('hero')}>Home</MobileNavButton>
-            <MobileNavButton onClick={() => scrollToSection('/elfe')}>Elfe</MobileNavButton>
-            <MobileNavButton onClick={() => scrollToSection('/steinbruch')}>Steinbruch</MobileNavButton>
-            < MobileNavButton onClick={() => scrollToSection('/verein')}>Der Verein</MobileNavButton>
+            <MobileNavButton onClick={() => scrollToSection('elfe')}>Elfe</MobileNavButton>
+            <MobileNavButton onClick={() => scrollToSection('steinbruch')}>Steinbruch</MobileNavButton>
+            < MobileNavButton onClick={() => scrollToSection('verein')}>Der Verein</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('contact')}>Kontakt</MobileNavButton>
           </div>
         )}
