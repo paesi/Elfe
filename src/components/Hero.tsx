@@ -1,30 +1,29 @@
 import React from 'react';
+import Background from '../assets/Elfe_historic.jpg'; // ersetze durch dein Wunschbild
 
 export default function Hero() {
   return (
-    <div id="hero" className="relative h-[600px] flex items-center overflow-hidden">
-      {/* Hintergrund-Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/assets/hero-video.mp4" // Pfad zu deinem Video
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+    <section
+      id="hero"
+      className="relative h-[600px] flex items-center justify-center text-center text-white bg-cover bg-center"
+      style={{ backgroundImage: `url(${Background})` }}
+    >
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
-      {/* Überlagerung */}
-      <div className="absolute inset-0 bg-primary/70 z-10"></div>
-
-      {/* Inhalt */}
-      <div className="container mx-auto px-4 relative z-20 text-white">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Ihr Partner für massgeschneiderten Unternehmenserfolg
+      <div className="relative z-10 px-4 max-w-3xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+          Die Dampflok „Elfe“ lebt wieder
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-          Als junges Consulting-Unternehmen bieten wir maßgeschneiderte Beratungsleistungen, perfekt auf Ihre spezifischen Herausforderungen zugeschnitten. Mit fundiertem Fachwissen und professionellem Ansatz entwickeln wir exzellente Strategien für Ihren nachhaltigen Erfolg. Unser engagierter Beratungsstil zeichnet uns aus: Proaktiv, partnerschaftlich, nahbar und zielgerichtet.
+        <p className="text-xl md:text-2xl mb-8 drop-shadow-md">
+          Unser Verein restauriert mit Herzblut ein technisches Kulturerbe – und erweckt den historischen Steinbruch zu neuem Leben.
         </p>
+        <a
+          href="#verein"
+          className="inline-block bg-highlight text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-primary transition"
+        >
+          Jetzt mitmachen
+        </a>
       </div>
-    </div>
+    </section>
   );
 }
