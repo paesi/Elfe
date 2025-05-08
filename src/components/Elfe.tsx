@@ -1,48 +1,52 @@
-import React, { useState } from 'react';
-import Elfe1 from '../assets/elfeputz_07.jpg';
-import Elfe2 from '../assets/Elfe_historic.jpg';
-import Elfe3 from '../assets/Elfe_zeichnung.jpg';
+import React from 'react';
+import Bild1 from '../assets/Elfe_historic.jpg';
+import Bild2 from '../assets/Elfeputz_07.jpg';
+import Bild3 from '../assets/Elfe_zeichnung.jpg';
 
-const elfeSlides = [
+const inhalte = [
   {
-    image: Elfe1,
-    description: 'Die Lokomotive in ihrem aktuellen Zustand vor der Restaurierung.',
+    image: Bild1,
+    title: 'Die Geschichte der Elfe',
+    text: 'Die Dampflok „Elfe“ wurde 1911 gebaut und transportierte jahrzehntelang Stein im Bruch. Ihr massiver Stahlkörper und der unverkennbare Dampf machten sie zum Symbol technischer Stärke.',
   },
   {
-    image: Elfe2,
-    description: 'Detailaufnahme des Kessels – hier wird besondere Präzision gefordert.',
+    image: Bild2,
+    title: 'Restaurierung mit Leidenschaft',
+    text: 'Mit viel Engagement und technischem Know-how wird die Lok Stück für Stück wieder in ihren Ursprungszustand versetzt. Jede Schraube zählt – und jeder Fortschritt begeistert.',
   },
   {
-    image: Elfe3,
-    description: 'Das Fahrgestell wurde bereits teilweise überarbeitet.',
+    image: Bild3,
+    title: 'Technische Besonderheiten',
+    text: 'Die Elfe war eine sogenannte Feldbahnlokomotive mit Schmalspur. Ihr Aufbau erlaubte präzises Rangieren auf engem Raum – ideal für Steinbruchbedingungen.',
   },
 ];
 
 export default function Elfe() {
-  const [current, setCurrent] = useState(0);
-
-  const prevSlide = () => setCurrent((current - 1 + elfeSlides.length) % elfeSlides.length);
-  const nextSlide = () => setCurrent((current + 1) % elfeSlides.length);
-
   return (
     <section id="elfe" className="py-16 px-4 bg-background text-primary">
-      <div className="container mx-auto max-w-4xl text-center">
-        <h1 className="text-4xl font-bold mb-6">Die Dampflok „Elfe“</h1>
+      <div className="container mx-auto space-y-20 max-w-5xl">
+        <h1 className="text-4xl font-bold text-center mb-12">Die Dampflok „Elfe“</h1>
 
-        {/* Karussell */}
-        <div className="relative mb-4">
-          <img
-            src={elfeSlides[current].image}
-            alt={`Elfe Bild ${current + 1}`}
-            className="mx-auto rounded-lg shadow-lg max-h-[400px] object-contain"
-          />
-          <button onClick={prevSlide} className="absolute top-1/2 left-0 -translate-y-1/2 px-4 text-2xl">‹</button>
-          <button onClick={nextSlide} className="absolute top-1/2 right-0 -translate-y-1/2 px-4 text-2xl">›</button>
-        </div>
-
-        <p className="text-secondary text-lg mt-4">
-          {elfeSlides[current].description}
-        </p>
+        {inhalte.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              index % 2 === 1 ? 'md:flex-row-reverse' : ''
+            }`}
+          >
+            <div className="md:w-1/2">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rounded-lg shadow-lg w-full max-h-[400px] object-cover"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-2xl font-semibold mb-4">{item.title}</h2>
+              <p className="text-secondary">{item.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
