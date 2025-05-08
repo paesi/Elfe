@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 import Bild1 from '../assets/Elfe_historic.jpg';
 import Bild2 from '../assets/elfeputz_07.jpg';
