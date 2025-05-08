@@ -1,6 +1,6 @@
 import React from 'react';
 import Bild1 from '../assets/Elfe_historic.jpg';
-import Bild2 from '../assets/Elfeputz_07.jpg';
+import Bild2 from '../assets/elfeputz_07.jpg';
 import Bild3 from '../assets/Elfe_zeichnung.jpg';
 
 const inhalte = [
