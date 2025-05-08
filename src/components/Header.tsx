@@ -3,7 +3,7 @@ import { Menu, X, Phone, Mail } from 'lucide-react';
 import { NavButton } from './navigation/NavButton';
 import { MobileNavButton } from './navigation/MobileNavButton';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../assets/Logo_Elfe.jpeg';
+import Logo from '../assets/Logo_Elfe.jpg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
