@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 bg-background">
+    <section id="contact" className="py-16 bg-backgroundAlt">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-4 text-primary">
           Kontaktieren Sie uns
