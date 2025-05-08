@@ -23,7 +23,7 @@ const inhalte = [
 
 export default function Steinbruch() {
   return (
-    <section id="steinbruch" className="py-16 px-4 bg-background text-primary">
+    <section id="steinbruch" className="py-16 px-4 bg-backgroundAlt text-primary">
       <div className="container mx-auto space-y-20 max-w-5xl">
         <h1 className="text-4xl font-bold text-center mb-12">Der historische Steinbruch</h1>
 
