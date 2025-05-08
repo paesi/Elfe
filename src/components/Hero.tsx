@@ -18,7 +18,7 @@ export default function Hero() {
           Unser Verein restauriert mit Herzblut ein technisches Kulturerbe – und erweckt den historischen Steinbruch zu neuem Leben.
         </p>
         <a
-          href="#verein"
+          href="#Elfe"
           className="inline-block bg-highlight text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-primary transition"
         >
           Mehr Erfahren
