@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
 import Bild1 from '../assets/Elfe_historic.jpg';
 import Bild2 from '../assets/elfeputz_07.jpg';
 import Bild3 from '../assets/Elfe_zeichnung.jpg';
@@ -21,7 +24,12 @@ const inhalte = [
   },
 ];
 
+const imageUrls = inhalte.map((item) => item.image);
+
 export default function Elfe() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
   return (
     <section id="elfe" className="py-16 px-4 bg-background text-primary">
       <div className="container mx-auto space-y-20 max-w-5xl">
@@ -38,7 +46,11 @@ export default function Elfe() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="rounded-lg shadow-lg w-full max-h-[400px] object-cover"
+                className="rounded-lg shadow-lg w-full max-h-[400px] object-cover cursor-zoom-in"
+                onClick={() => {
+                  setPhotoIndex(index);
+                  setIsOpen(true);
+                }}
               />
             </div>
             <div className="md:w-1/2">
@@ -47,7 +59,24 @@ export default function Elfe() {
             </div>
           </div>
         ))}
+
+        {isOpen && (
+          <Lightbox
+            mainSrc={imageUrls[photoIndex]}
+            nextSrc={imageUrls[(photoIndex + 1) % imageUrls.length]}
+            prevSrc={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
+            onCloseRequest={() => setIsOpen(false)}
+            onMovePrevRequest={() =>
+              setPhotoIndex((photoIndex + imageUrls.length - 1) % imageUrls.length)
+            }
+            onMoveNextRequest={() =>
+              setPhotoIndex((photoIndex + 1) % imageUrls.length)
+            }
+            imageCaption={inhalte[photoIndex].title}
+          />
+        )}
       </div>
     </section>
   );
 }
+
