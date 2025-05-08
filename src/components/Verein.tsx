@@ -57,7 +57,7 @@ export default function Verein() {
         <h2 className="text-2xl font-semibold mb-4 mt-12">Mitglied werden</h2>
         <p className="text-secondary mb-6">
           Ob aktiv mitanpacken oder durch einen Beitrag unterstützen – wir freuen uns über neue Mitglieder! 
-          Kontaktieren Sie uns einfach über das <a href="/#contact" className="text-highlight hover:underline">Kontaktformular</a>.
+          Kontaktieren Sie uns einfach über das <a href="/#contact" className="text-primary font-bold hover:underline">Kontaktformular</a>.
         </p>
       </div>
     </section>
