@@ -22,7 +22,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-6 text-primary">
               Kontaktinformationen
             </h3>
-            
+
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="text-highlight mt-1" />
@@ -51,12 +51,11 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-
-              </div>
             </div>
           </div>
-        </div>
+        </div> {/* ✅ Hier war ein div zu wenig */}
       </div>
     </section>
   );
 }
+
