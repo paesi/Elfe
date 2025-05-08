@@ -1,61 +1,55 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-primary">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Epexon</h3>
-            <p className="text-primary">
-              Ihr Partner für massgeschneiderten Unternehmenserfolg
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Kontakt</h4>
-            <address className="not-italic text-primary">
-              <p>Vorderdorfstrasse 1b</p>
-              <p>3114 Wichtrach</p>
-              <p>Tel: +41 79 735 60 59</p>
-              <p>info@epexon.com</p>
-            </address>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Öffnungszeiten</h4>
-            <div className="text-primary">
-              <p>Mo-Fr: 08:00 - 17:00</p>
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Folgen Sie uns</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-highlight transition-colors">
-                <Facebook />
-              </a>
-              <a href="#" className="hover:text-highlight transition-colors">
-                <Instagram />
-              </a>
-              <a href="#" className="hover:text-highlight transition-colors">
-                <Linkedin />
-              </a>
-            </div>
-          </div>
+    <footer className="bg-background text-primary mt-16">
+      <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        {/* Logo & Beschreibung */}
+        <div>
+          <h3 className="text-xl font-bold mb-2">Verein Dampflok Elfe</h3>
+          <p className="text-secondary">
+            Für den Erhalt von Technikgeschichte und Gemeinschaft. Wir restaurieren die Elfe mit Leidenschaft.
+          </p>
         </div>
-        
-        <div className="border-t border-white mt-8 pt-8 text-sm text-primary">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2025 Epexon. Alle Rechte vorbehalten.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="/privacy" className="hover:text-highlight">Datenschutz</a>
-              <a href="/imprint" className="hover:text-highlight">Impressum</a>
-              <a href="/terms" className="hover:text-highlight">AGB</a>
-            </div>
-          </div>
+
+        {/* Navigation */}
+        <div>
+          <h4 className="text-lg font-semibold mb-2">Navigation</h4>
+          <ul className="space-y-1">
+            <li><a href="#hero" className="hover:text-highlight">Home</a></li>
+            <li><a href="#elfe" className="hover:text-highlight">Die Elfe</a></li>
+            <li><a href="#steinbruch" className="hover:text-highlight">Steinbruch</a></li>
+            <li><a href="#verein" className="hover:text-highlight">Der Verein</a></li>
+            <li><a href="#contact" className="hover:text-highlight">Kontakt</a></li>
+          </ul>
         </div>
+
+        {/* Kontakt */}
+        <div>
+          <h4 className="text-lg font-semibold mb-2">Kontakt</h4>
+          <address className="not-italic text-secondary space-y-1">
+            <p>Verein Dampflok Elfe</p>
+            <p>Beispielweg 1</p>
+            <p>1234 Musterort</p>
+            <p><a href="mailto:info@dampflok-elfe.ch" className="hover:text-highlight">info@dampflok-elfe.ch</a></p>
+          </address>
+        </div>
+
+        {/* Rechtliches */}
+        <div>
+          <h4 className="text-lg font-semibold mb-2">Dokumente</h4>
+          <ul className="space-y-1">
+            <li><a href="/statuten.pdf" target="_blank" className="hover:text-highlight">Statuten (PDF)</a></li>
+            <li><a href="/impressum" className="hover:text-highlight">Impressum</a></li>
+            <li><a href="/privacy" className="hover:text-highlight">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer-Bottom */}
+      <div className="border-t border-white/10 mt-8 pt-6 text-sm text-center text-secondary">
+        <p>&copy; {new Date().getFullYear()} Verein Dampflok Elfe. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
   );
