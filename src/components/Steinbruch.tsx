@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Bruch1 from '../assets/steinbruch/1.jpg';
-import Bruch2 from '../assets/steinbruch/2.jpg';
-import Bruch3 from '../assets/steinbruch/3.jpg';
+import Bruch1 from '../assets/Rekonstruktion_steinbruchbahn.jpg';
+import Bruch2 from '../assets/Steinbrecherhuesli.jpg';
+import Bruch3 from '../assets/Pferde.jpg';
 
 const steinbruchSlides = [
   {
