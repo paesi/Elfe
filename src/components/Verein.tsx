@@ -26,7 +26,7 @@ const team = [
       'Ursula unterstützt den Verein und übernimmt die Administration. Sie sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
   },
   {
-    name: 'Lisa Bäsiger',
+    name: 'Lisa Bösiger',
     rolle: 'Kassierin',
     bild: WerkstattImg,
     beschreibung:
