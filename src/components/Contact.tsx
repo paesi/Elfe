@@ -10,7 +10,7 @@ export default function Contact() {
           Kontaktieren Sie uns
         </h2>
         <p className="text-secondary text-center mb-12 max-w-2xl mx-auto">
-          Haben Sie Fragen oder möchten Sie ein Angebot? Wir freuen uns auf Ihre Nachricht.
+          Haben Sie Fragen oder möchten Sie Mitglied werden? Wir freuen uns auf Ihre Nachricht.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
