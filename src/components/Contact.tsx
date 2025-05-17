@@ -23,15 +23,6 @@ export default function Contact() {
               Kontaktinformationen
             </h3>
 
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="text-highlight mt-1" />
-                <div>
-                  <p className="font-medium">Adresse</p>
-                  <p className="text-secondary">Bernstrasse 62<br />3072 Ostermundigen</p>
-                </div>
-              </div>
-
               <div className="flex items-start space-x-3">
                 <Phone className="text-highlight mt-1" />
                 <div>
