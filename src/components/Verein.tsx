@@ -15,7 +15,7 @@ const team = [
   },
   {
     name: 'Peter Hofmann',
-    rolle: 'Vizepräsidentin',
+    rolle: 'Vizepräsident',
     bild: VizeImg,
     beschreibung:
       'Peter bringt organisatorisches Talent und Technikbegeisterung zusammen. Er betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
