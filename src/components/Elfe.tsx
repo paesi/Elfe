@@ -8,7 +8,7 @@ const inhalte = [
   {
     image: Bild1,
     title: 'Die Geschichte der Elfe',
-    text: 'Die Dampflok „Elfe“ wurde 1911 gebaut und transportierte jahrzehntelang Stein im Bruch. Ihr massiver Stahlkörper und der unverkennbare Dampf machten sie zum Symbol technischer Stärke.',
+    text: 'Die Dampflok „Elfe“ wurde 1876 gebaut und transportierte jahrzehntelang Stein im Bruch. Ihr massiver Stahlkörper und der unverkennbare Dampf machten sie zum Symbol technischer Stärke.',
   },
   {
     image: Bild2,
