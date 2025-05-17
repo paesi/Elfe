@@ -23,30 +23,31 @@ export default function Contact() {
               Kontaktinformationen
             </h3>
 
-              <div className="flex items-start space-x-3">
-                <Phone className="text-highlight mt-1" />
-                <div>
-                  <p className="font-medium">Telefon</p>
-                  <a href="tel:+4177602182" className="text-secondary hover:text-highlight">
-                    +41 79 602 18 12
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Mail className="text-highlight mt-1" />
-                <div>
-                  <p className="font-medium">E-Mail</p>
-                  <a href="mailto:info@steinbruch.be" className="text-secondary hover:text-highlight">
-                    info@steinbruch.be
-                  </a>
-                </div>
+            <div className="flex items-start space-x-3 mb-4">
+              <Phone className="text-highlight mt-1" />
+              <div>
+                <p className="font-medium">Telefon</p>
+                <a href="tel:+4177602182" className="text-secondary hover:text-highlight">
+                  +41 79 602 18 12
+                </a>
               </div>
             </div>
-          </div>
-        </div> {/* ✅ Hier war ein div zu wenig */}
-      </div>
+
+            <div className="flex items-start space-x-3">
+              <Mail className="text-highlight mt-1" />
+              <div>
+                <p className="font-medium">E-Mail</p>
+                <a href="mailto:info@steinbruch.be" className="text-secondary hover:text-highlight">
+                  info@steinbruch.be
+                </a>
+              </div>
+            </div>
+
+          </div> {/* End contact info box */}
+        </div> {/* End grid */}
+      </div> {/* End container */}
     </section>
   );
 }
+
 
