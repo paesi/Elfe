@@ -19,11 +19,18 @@ const team = [
       'Peter bringt organisatorisches Talent und Technikbegeisterung zusammen. Er betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
   },
   {
-    name: 'Jean-Marc Margot',
-    rolle: 'Werkstattchef',
+    name: 'Ursula Marti',
+    rolle: 'Sekretärin',
     bild: WerkstattImg,
     beschreibung:
-      'Jam ist für die praktische Umsetzung der Restaurierungsarbeiten verantwortlich – mit jahrzehntelanger Erfahrung im handwerker Umfeld.',
+      'Ursula unterstützt den Verein und übernimmt die Administration. Sie sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
+  },
+  {
+    name: 'Lisa Bäsiger',
+    rolle: 'Kassierin',
+    bild: WerkstattImg,
+    beschreibung:
+      'Lisa ist unsere Kassiererin und verwaltet die Finanzen. Sie behält den Überblick über Buchhaltung und Budget.',
   },
 ];
 
