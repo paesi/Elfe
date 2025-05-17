@@ -48,7 +48,7 @@ export default function Verein() {
         </p>
 
         <h2 className="text-2xl font-semibold mb-4 mt-12 text-center">Unser Vorstand</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
           {team.map((mitglied) => (
             <div key={mitglied.name} className="text-center">
               <img
