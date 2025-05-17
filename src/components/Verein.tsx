@@ -1,7 +1,9 @@
 import React from 'react';
-import PraesidentImg from '../assets/Pascal.jpg';
-import VizeImg from '../assets/Pascal.jpg';
-import WerkstattImg from '../assets/Pascal.jpg';
+import PraesidentImg from '../assets/Platzhalter.png';
+import VizeImg from '../assets/Platzhalter.png';
+import SekretärinImg from '../assets/Platzhalter.png';
+import KassierinImg from '../assets/Platzhalter.png';
+
 
 const team = [
   {
@@ -21,14 +23,14 @@ const team = [
   {
     name: 'Ursula Marti',
     rolle: 'Sekretärin',
-    bild: WerkstattImg,
+    bild: SekretärinImg,
     beschreibung:
       'Ursula unterstützt den Verein und übernimmt die Administration. Sie sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
   },
   {
     name: 'Lisa Bösiger',
     rolle: 'Kassierin',
-    bild: WerkstattImg,
+    bild: KassierinImg,
     beschreibung:
       'Lisa ist unsere Kassiererin und verwaltet die Finanzen. Sie behält den Überblick über Buchhaltung und Budget.',
   },
