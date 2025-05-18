@@ -27,13 +27,6 @@ const team = [
     beschreibung:
       'Ursula unterstützt den Verein und übernimmt die Administration. Sie sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
   },
-  {
-    name: 'Lisa Bösiger',
-    rolle: 'Kassierin',
-    bild: KassierinImg,
-    beschreibung:
-      'Lisa ist unsere Kassiererin und verwaltet die Finanzen. Sie behält den Überblick über Buchhaltung und Budget.',
-  },
 ];
 
 export default function Verein() {
@@ -48,7 +41,7 @@ export default function Verein() {
         </p>
 
         <h2 className="text-2xl font-semibold mb-4 mt-12 text-center">Unser Vorstand</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {team.map((mitglied) => (
             <div key={mitglied.name} className="text-center">
               <img
