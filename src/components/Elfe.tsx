@@ -18,7 +18,7 @@ const inhalte = [
   {
     image: Bild3,
     title: 'Technische Besonderheiten',
-    text: 'Die Elfe war eine sogenannte Feldbahnlokomotive mit Schmalspur. Ihr Aufbau erlaubte präzises Rangieren auf engem Raum – ideal für Steinbruchbedingungen.',
+    text: 'Die Elfe war eine sogenannte Feldbahnlokomotive mit Normalspur. Ihr Aufbau erlaubte präzises Rangieren auf engem Raum – ideal für Steinbruchbedingungen.',
   },
 ];
 
