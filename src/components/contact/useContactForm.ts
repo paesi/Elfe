@@ -50,7 +50,7 @@ export function useContactForm() {
           access_key: accessKey,
           subject: `Neue Kontaktanfrage: ${formData.subject}`,
           from_name: `${formData.firstName} ${formData.lastName}`,
-          to_email: 'info@h-i-s.ch',
+          to_email: 'info@steinbruch.be',
           reply_to: formData.email,
           message: `
 Name: ${formData.firstName} ${formData.lastName}
