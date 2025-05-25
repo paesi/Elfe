@@ -25,14 +25,14 @@ const team = [
     rolle: 'Sekretär und Kassier',
     bild: SekretärImg,
     beschreibung:
-      'Daniel unterstützt den Verein und übernimmt die Administration. Er sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
+      'Daniel betreut die mechanischen Systeme des Vereins. Er stellt sicher, dass alle technischen Abläufe reibungslos und zuverlässig funktionieren.',
   },
   {
     name: 'Andreas Schäublin',
     rolle: 'Technischer Leiter',
     bild: TechImg,
     beschreibung:
-      'Andreas ist verantwortlich für die technische Leitung des Vereins. Mit seinem Fachwissen sorgt er für einen reibungslosen Betrieb der Systeme und unterstützt das Team bei technischen Fragestellungen.',
+      'Andreas verantwortet die Mechanik und sorgt für einen reibungslosen technischen Ablauf.',
   },
 ];
 
