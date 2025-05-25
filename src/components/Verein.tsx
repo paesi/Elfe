@@ -1,8 +1,8 @@
 import React from 'react';
 import PraesidentImg from '../assets/Platzhalter.png';
 import VizeImg from '../assets/Platzhalter.png';
-import SekretärinImg from '../assets/Platzhalter.png';
-import KassierinImg from '../assets/Platzhalter.png';
+import SekretärImg from '../assets/Platzhalter.png';
+import TechImg from '../assets/Platzhalter.png';
 
 
 const team = [
@@ -21,11 +21,18 @@ const team = [
       'Peter bringt organisatorisches Talent und Technikbegeisterung zusammen. Er betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
   },
   {
-    name: 'Ursula Marti',
-    rolle: 'Sekretärin',
-    bild: SekretärinImg,
+    name: 'Daniel Krauchtaler',
+    rolle: 'Sekretär und Kassier',
+    bild: SekretärImg,
     beschreibung:
-      'Ursula unterstützt den Verein und übernimmt die Administration. Sie sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
+      'Daniel unterstützt den Verein und übernimmt die Administration. Er sorgt für klare Abläufe und eine gut organisierte Kommunikation.',
+  },
+  {
+    name: 'Andreas Schäublin',
+    rolle: 'Technischer Leiter',
+    bild: TechImg,
+    beschreibung:
+      'Andreas ist verantwortlich für die technische Leitung des Vereins. Mit seinem Fachwissen sorgt er für einen reibungslosen Betrieb der Systeme und unterstützt das Team bei technischen Fragestellungen.',
   },
 ];
 
@@ -41,7 +48,7 @@ export default function Verein() {
         </p>
 
         <h2 className="text-2xl font-semibold mb-4 mt-12 text-center">Unser Vorstand</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
           {team.map((mitglied) => (
             <div key={mitglied.name} className="text-center">
               <img
