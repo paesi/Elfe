@@ -32,6 +32,7 @@ export default function App() {
         <Elfe />
         <Steinbruch />
         <Verein />
+        <Spenden />
         <Contact />
       </main>
     } />
