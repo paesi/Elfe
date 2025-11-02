@@ -38,7 +38,7 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-2">Dokumente</h4>
           <ul className="space-y-1">
-            <li><a href="/Statuten_S-H.pdf" target="_blank" className="hover:text-highlight">Statuten (PDF)</a></li>
+            <li><a href="/Statuten_04_07_25.pdf" target="_blank" className="hover:text-highlight">Statuten </a></li>
             <li><a href="/impressum" className="hover:text-highlight">Impressum</a></li>
             <li><a href="/privacy" className="hover:text-highlight">Datenschutz</a></li>
           </ul>
