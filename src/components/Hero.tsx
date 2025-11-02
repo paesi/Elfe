@@ -15,13 +15,13 @@ export default function Hero() {
           Die Dampflok „Elfe“ soll wieder zum leben erweckt werden
         </h1>
         <p className="text-xl md:text-2xl mb-8 drop-shadow-md">
-          Unser Verein restauriert mit Herzblut ein technisches Kulturerbe – und erweckt den historischen Steinbruch zu neuem Leben.
+          Unser Verein restauriert mit Herzblut ein technisches Kulturerbe
         </p>
         <a
           href="#elfe"
           className="inline-block bg-highlight text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-primary transition"
         >
-          Mehr Erfahren
+          Jetzt Unterstützen
         </a>
       </div>
     </section>
