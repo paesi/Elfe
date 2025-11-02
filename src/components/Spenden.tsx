@@ -1,7 +1,22 @@
-// src/components/Spenden.tsx
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Spenden() {
+  useEffect(() => {
+    // Dynamically import the TwintButton module in the browser
+    import("https://unpkg.com/@raisenow/paylink-button@2/dist/TwintButton.js")
+      .then(({ TwintButton }) => {
+        TwintButton.render("#rnw-paylink-button-cwksk", {
+          "solution-id": "cwksk",
+          "solution-type": "donate",
+          language: "de",
+          size: "large",
+          width: "fixed",
+          "color-scheme": "dark",
+        });
+      })
+      .catch((err) => console.error("Error loading TwintButton:", err));
+  }, []);
+
   return (
     <section className="py-20 bg-gray-50 text-center">
       <h2 className="text-3xl font-bold mb-4">Spenden</h2>
@@ -9,12 +24,9 @@ export default function Spenden() {
         Unterstütze unser Projekt mit einer Spende! Jeder Beitrag hilft uns,
         unsere Ziele zu erreichen.
       </p>
-      <a
-        href="/spenden"
-        className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-      >
-        Jetzt Spenden
-      </a>
+
+      {/* Placeholder div where the TWINT button will render */}
+      <div id="rnw-paylink-button-cwksk" className="flex justify-center" />
     </section>
   );
 }
