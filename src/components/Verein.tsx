@@ -2,7 +2,7 @@ import React from 'react';
 import PraesidentImg from '../assets/Robinson.jpg';
 import VizeImg from '../assets/Hofmann.jpg';
 import SekretärImg from '../assets/Krauchthaler.jpg';
-import TechImg from '../assets/Schäublin,jpg';
+import TechImg from '../assets/Schäublin.jpg';
 
 
 const team = [
