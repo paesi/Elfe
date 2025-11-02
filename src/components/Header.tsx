@@ -53,7 +53,7 @@ export default function Header() {
             <NavButton onClick={() => scrollToSection('steinbruch')}>Steinbruch</NavButton>
             <NavButton onClick={() => scrollToSection('verein')}>Der Verein</NavButton>
             <NavButton onClick={() => scrollToSection('spenden')}>Spenden</NavButton>
-            <NavButton onClick={() => scrollToSection('#contact')}>Kontakt</NavButton>
+            <NavButton onClick={() => scrollToSection('contact')}>Kontakt</NavButton>
           </div>
 
           <button
