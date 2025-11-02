@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import Elfe from './components/Elfe';
 import Steinbruch from './components/Steinbruch';
 import Verein from './components/Verein';
+import Spenden from './components/Spenden';
 import Contact from './components/Contact';
 import Imprint from './pages/Imprint';
 import Privacy from './pages/Privacy';
