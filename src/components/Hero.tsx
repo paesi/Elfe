@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="relative z-10 px-4 max-w-3xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-          Die Dampflok „Elfe“ lebt wieder
+          Die Dampflok „Elfe“ soll wieder zum leben erweckt werden
         </h1>
         <p className="text-xl md:text-2xl mb-8 drop-shadow-md">
           Unser Verein restauriert mit Herzblut ein technisches Kulturerbe – und erweckt den historischen Steinbruch zu neuem Leben.
