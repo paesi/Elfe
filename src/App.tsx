@@ -38,6 +38,7 @@ export default function App() {
     <Route path="/elfe" element={<Elfe />} />
     <Route path="/steinbruch" element={<Steinbruch />} />
     <Route path="/verein" element={<Verein />} />
+    <Route path="/spenden" element={<Spenden />} />
     <Route path="/imprint" element={<Imprint />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/terms" element={<Terms />} />
