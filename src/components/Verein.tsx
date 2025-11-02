@@ -21,7 +21,7 @@ const team = [
       'Peter bringt organisatorisches Talent und Technikbegeisterung zusammen. Er betreut unsere Partnerschaften und Öffentlichkeitsarbeit.',
   },
   {
-    name: 'Daniel Krauchtaler',
+    name: 'Daniel Krauchthaler',
     rolle: 'Sekretär und Kassier',
     bild: SekretärImg,
     beschreibung:
