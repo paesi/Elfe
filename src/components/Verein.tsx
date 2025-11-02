@@ -1,8 +1,8 @@
 import React from 'react';
-import PraesidentImg from '../assets/Platzhalter.png';
-import VizeImg from '../assets/Platzhalter.png';
-import SekretärImg from '../assets/Platzhalter.png';
-import TechImg from '../assets/Platzhalter.png';
+import PraesidentImg from '../assets/Robinson.jpg';
+import VizeImg from '../assets/Hofmann.jpg';
+import SekretärImg from '../assets/Krauchthaler.jpg';
+import TechImg from '../assets/Schäublin,jpg';
 
 
 const team = [
