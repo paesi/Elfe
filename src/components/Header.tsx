@@ -52,6 +52,7 @@ export default function Header() {
             <NavButton onClick={() => scrollToSection('elfe')}>Elfe</NavButton>
             <NavButton onClick={() => scrollToSection('steinbruch')}>Steinbruch</NavButton>
             <NavButton onClick={() => scrollToSection('verein')}>Der Verein</NavButton>
+            <NavButton onClick={() => scrollToSection('spenden')}>Spenden</NavButton>
             <NavButton onClick={() => scrollToSection('#contact')}>Kontakt</NavButton>
           </div>
 
@@ -68,7 +69,8 @@ export default function Header() {
             <MobileNavButton onClick={() => scrollToSection('hero')}>Home</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('elfe')}>Elfe</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('steinbruch')}>Steinbruch</MobileNavButton>
-            < MobileNavButton onClick={() => scrollToSection('verein')}>Der Verein</MobileNavButton>
+            <MobileNavButton onClick={() => scrollToSection('verein')}>Der Verein</MobileNavButton>
+            <MobileNavButton onClick={() => scrollToSection('spenden')}>Spenden</MobileNavButton>
             <MobileNavButton onClick={() => scrollToSection('contact')}>Kontakt</MobileNavButton>
           </div>
         )}
