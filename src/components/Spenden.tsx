@@ -31,12 +31,6 @@ export default function Spenden() {
 
         {/* TWINT Donation Button mount point */}
         <div id="rnw-paylink-button-cwksk" className="flex justify-center" />
-
-        {/* Optional fallback message */}
-        <p className="text-secondary text-sm mt-4">
-          Falls der Spendenbutton nicht angezeigt wird, laden Sie die Seite neu
-          oder prüfen Sie Ihre Verbindung.
-        </p>
       </div>
     </section>
   );
