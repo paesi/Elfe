@@ -20,7 +20,7 @@ export default function Spenden() {
   }, []);
 
   return (
-    <section id="spenden" className="py-16 bg-backgroundAlt">
+    <section id="spenden" className="py-16 bg-backgroundcolor">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4 text-primary">Spenden</h2>
         <p className="text-secondary max-w-2xl mx-auto mb-6">
