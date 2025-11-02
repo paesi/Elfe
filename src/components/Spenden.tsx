@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 
 export default function Spenden() {
   useEffect(() => {
-    // Dynamically import the TwintButton module in the browser
+    // Only run in browser
+    if (typeof window === "undefined") return;
+
     import("https://unpkg.com/@raisenow/paylink-button@2/dist/TwintButton.js")
       .then(({ TwintButton }) => {
         TwintButton.render("#rnw-paylink-button-cwksk", {
@@ -19,15 +21,23 @@ export default function Spenden() {
 
   return (
     <section id="spenden" className="py-16 bg-backgroundAlt">
-    <section className="py-20 bg-gray-50 text-center">
-      <h2 className="text-3xl font-bold mb-4">Spenden</h2>
-      <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-        Unterstütze unser Projekt mit einer Spende! Jeder Beitrag hilft uns,
-        unsere Ziele zu erreichen.
-      </p>
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-4 text-primary">Spenden</h2>
+        <p className="text-secondary max-w-2xl mx-auto mb-6">
+          Unterstütze unser Projekt mit einer Spende! Jeder Beitrag hilft uns,
+          unsere Ziele zu erreichen und den Erhalt der Dampflok „Elfe“ zu
+          sichern.
+        </p>
 
-      {/* Placeholder div where the TWINT button will render */}
-      <div id="rnw-paylink-button-cwksk" className="flex justify-center" />
+        {/* TWINT Donation Button mount point */}
+        <div id="rnw-paylink-button-cwksk" className="flex justify-center" />
+
+        {/* Optional fallback message */}
+        <p className="text-secondary text-sm mt-4">
+          Falls der Spendenbutton nicht angezeigt wird, laden Sie die Seite neu
+          oder prüfen Sie Ihre Verbindung.
+        </p>
+      </div>
     </section>
   );
 }
