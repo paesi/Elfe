@@ -10,7 +10,7 @@ export default function Privacy() {
 
         <h2>1. Allgemeine Hinweise</h2>
         <p>
-          Der Schutz Ihrer persönlichen Daten ist der P-Motion GmbH ein besonderes
+          Der Schutz Ihrer persönlichen Daten ist der Steinbruch historic ein besonderes
           Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und
           entsprechend den gesetzlichen Datenschutzvorschriften der Schweiz sowie dieser
           Datenschutzerklärung.
@@ -18,12 +18,11 @@ export default function Privacy() {
 
         <h2>2. Verantwortliche Stelle</h2>
         <address>
-          <p>P-Motion GmbH</p>
-          <p>Vorderdorfstrasse 1b</p>
-          <p>3114 Wichtrach</p>
+          <p>Steinbruch historic</p>
+          <p>3072 Ostermundingen</p>
           <p>Schweiz</p>
-          <p>Telefon: 079 735 60 59</p>
-          <p>E-Mail: info@epexon.com</p>
+          <p>Telefon: 079 602 18 12</p>
+          <p>E-Mail: info@steinbruch.be</p>
         </address>
 
         <h2>3. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck der Verwendung</h2>
