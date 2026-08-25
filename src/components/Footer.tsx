@@ -7,7 +7,7 @@ export default function Footer() {
 
         {/* Logo & Beschreibung */}
         <div>
-          <h3 className="text-xl font-bold mb-2">Verein Dampflok Elfe</h3>
+          <h3 className="text-xl font-bold mb-2">Verein Steinbruch historic</h3>
           <p className="text-secondary">
             Für den Erhalt von Technikgeschichte und Gemeinschaft. Wir restaurieren die Elfe mit Leidenschaft.
           </p>
